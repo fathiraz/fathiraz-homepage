@@ -21,9 +21,11 @@ app.get('/api/resume', (req, res) => {
 app.get('/api/config', (req, res) => {
     res.sendFile(path.join(__dirname, '../../public/config.json'));
 });
+
 // running only not in vercel
-if (process.env.VERCEL_ENV != 'production') {
-    app.listen(PORT, () => {
-        console.log(`Server is running on port ${PORT}`);
-    });
-}
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+});
+
+// Export the Express API
+module.exports = app;
