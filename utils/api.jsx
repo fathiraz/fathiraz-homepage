@@ -1,4 +1,4 @@
-const BASE_URL = 'http://localhost:3001';
+const BASE_URL = 'https://fathiraz-homepage-api.vercel.app';
 
 export async function fetchResumeData() {
   try {
