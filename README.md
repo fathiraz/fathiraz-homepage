@@ -3,9 +3,9 @@
 <a id="readme-top"></a>
 
 ## Screenshot
-![React Bootstrap](./public/screenshot/react-bootstrap.png)
-![React Bulma](./public/screenshot/react-bulma.png)
-![React Tailwind](./public/screenshot/react-tailwind.png)
+![React Bootstrap](./public/images/react-bootstrap.png)
+![React Bulma](./public/images/react-bulma.png)
+![React Tailwind](./public/images/react-tailwind.png)
 
 ## About The Project
 
