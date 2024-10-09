@@ -3,9 +3,7 @@
 <a id="readme-top"></a>
 
 ## Screenshot
-![React Bootstrap](./public/images/react-bootstrap.png)
-![React Bulma](./public/images/react-bulma.png)
-![React Tailwind](./public/images/react-tailwind.png)
+<img src="https://raw.githubusercontent.com/fathiraz/fathiraz-homepage/refs/heads/main/public/images/react-bootstrap.png" width="30%"></img> <img src="https://raw.githubusercontent.com/fathiraz/fathiraz-homepage/refs/heads/main/public/images/react-bulma.png" width="30%"></img> <img src="https://raw.githubusercontent.com/fathiraz/fathiraz-homepage/refs/heads/main/public/images/react-tailwind.png" width="30%"></img> 
 
 ## About The Project
 
@@ -37,7 +35,7 @@ As part of my learning process in modern frontend development, I wanted to chall
 
 ## Architecture
 
-- **Monorepo Structure**: This project uses **Yarn Workspaces** to manage a monorepo, allowing for efficient dependency management and streamlined development.
+- **Monorepo Structure**: This project uses **Npm Workspaces** to manage a monorepo, allowing for efficient dependency management and streamlined development.
 - **Applications**: 
   - **React Application**: The frontend of the portfolio, built using React on Vite and various CSS frameworks.
   - **Express.js Application**: A backend service that fetches data from an API, providing the necessary information for the React application.
