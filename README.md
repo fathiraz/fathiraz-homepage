@@ -2,6 +2,11 @@
 
 <a id="readme-top"></a>
 
+## Screenshot
+![React Bootstrap](./public/screenshot/react-bootstrap.png)
+![React Bulma](./public/screenshot/react-bulma.png)
+![React Tailwind](./public/screenshot/react-tailwind.png)
+
 ## About The Project
 
 Welcome to my portfolio homepage! 🎉
@@ -50,6 +55,16 @@ The homepage features a floating select option that allows viewers to switch bet
 - **Backend**: 
   - Node.js, Express (for any backend services if needed)
 
+## TODO
+- [x] Add JS Framework React
+- [ ] Add JS Framework Vue 3
+- [ ] Add JS Framework Svelte
+- [x] Add CSS Bootstrap
+- [x] Add CSS Bulma
+- [x] Add CSS Tailwind
+- [ ] Add CSS Material
+- [ ] Add CSS Chakra UI
+  
 ## Get Involved
 
 Feel free to explore the code, provide feedback, or contribute! This project is a work in progress, and I welcome any suggestions or improvements.
@@ -82,4 +97,4 @@ Thank you for visiting my portfolio! I hope you enjoy exploring the different fr
 [license-shield]: https://img.shields.io/github/license/fathiraz/fathiraz-homepage.svg?style=for-the-badge
 [license-url]: https://github.com/fathiraz/fathiraz-homepage/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/your_username
+[linkedin-url]: https://www.linkedin.com/in/fathiraz-arthuro/
