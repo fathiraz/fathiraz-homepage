@@ -6,6 +6,6 @@
       "use": "@vercel/node"
     }
   ],
-  "rewrites": [{ "source": "/(.*)", "destination": "/" }],
+  "rewrites": [{ "source": "/(.*)", "destination": "/api" }],
   "installCommand": "yarn install"
 }
