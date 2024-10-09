@@ -1,0 +1,10 @@
+{
+  "frameworks": {
+    "javascript": [{ "name": "React" }],
+    "css": [
+      { "name": "bootstrap" },
+      { "name": "bulma" },
+      { "name": "tailwind" }
+    ]
+  }
+}

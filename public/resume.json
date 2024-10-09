@@ -1,0 +1,217 @@
+{
+  "name": "Fathiraz Arthuro",
+  "title": "Backend Engineer",
+  "summary": "A person who likes to solve problems and learn new things. I loves build something that make people life easier. I have more than 8 years experience in software development and i'm a backend engineer. Ps: I'm a ice americano guy ☕",
+  "work_preference": "I'm looking for a remote job and open to relocate to the place that has good coffee and good food",
+  "contact": {
+    "linkedin": "linkedin.com/in/fathiraz-arthuro",
+    "github": "github.com/fathiraz"
+  },
+  "languages": [
+    {
+      "language": "🇮🇩 Indonesian",
+      "proficiency": "Full Professional"
+    },
+    {
+      "language": "🏴󠁧󠁢󠁥󠁮󠁧󠁿 English",
+      "proficiency": "Conversational"
+    }
+  ],
+  "tools": [
+    "VS Code",
+    "Goland",
+    "DBeaver",
+    "Postman",
+    "Figma",
+    "Notion",
+    "Slack",
+    "Github",
+    "Jira",
+    "Apple",
+    "Linux",
+    "Chrome"
+  ],
+  "technology_stack": [
+    "Go",
+    "Python",
+    "PHP",
+    "JavaScript",
+    "TypeScript",
+    "Nodejs",
+    "Docker",
+    "Redis",
+    "MySQL",
+    "MariaDB",
+    "PostgreSQL",
+    "RabbitMQ",
+    "Apache Kafka",
+    "Grpc",
+    "GraphQL",
+    "MongoDB",
+    "Amazon Web Services",
+    "Google Cloud",
+    "Jenkins",
+    "Grafana",
+    "Jaeger Tracing",
+    "Sentry",
+    "Elasticsearch",
+    "Django",
+    "CodeIgniter",
+    "Laravel",
+    "HTML5",
+    "CSS3"
+  ],
+  "educations": [
+    {
+      "university": "Gunadarma University",
+      "location": "Bekasi, Indonesia",
+      "degree": "Bachelor Degree",
+      "major": "Information System",
+      "start": "2010",
+      "end": "2014",
+      "grade": "3.24 of 4.00"
+    }
+  ],
+  "experiences": [
+    {
+      "company": "Kitabisa",
+      "position": "Sr. Backend Engineer",
+      "location": "Jakarta, Indonesia",
+      "start_date": "July 2022",
+      "end_date": "Present",
+      "duration": "2 years 3 months",
+      "summary": "Kitabisa.com is an online crowdfunding platform for social and personal medical causes. Since 2013, Kitabisa has facilitated over $40 million in donations from millions of donors across Indonesia.",
+      "workarounds": [
+        "Developed a subscription fee and tipping feature, enabling the company to achieve monthly revenue exceeding IDR 100 million and fostering a sustainable monetization strategy.",
+        "Identified bottlenecks in an outdated email queue feature, resulting in solving delays for 13 million campaign-related emails; significantly improved communication efficiency and donor engagement.",
+        "Streamlined API performance by implementing a redesigned cache invalidation process, resulting in a remarkable 50% reduction in response time.",
+        "Implemented an advanced trace, log, and metric system in code, resulting in a 3x faster, more efficient production tracking process.",
+        "Enhanced developer productivity and knowledge by creating comprehensive technical documentation, resulting in a 30% reduction in onboarding time for new team members."
+      ],
+      "skills_used": [
+        "Go",
+        "Redis",
+        "MySQL",
+        "PostgreSQL",
+        "Rabbitmq",
+        "Kafka",
+        "Google Cloud",
+        "Grafana",
+        "Docker",
+        "Cattle"
+      ]
+    },
+    {
+      "company": "TaniHub",
+      "position": "Sr. Backend Engineer",
+      "location": "Jakarta, Indonesia",
+      "start_date": "June 2021",
+      "end_date": "July 2022",
+      "duration": "1 year 2 months",
+      "summary": "TaniHub is a B2B agriculture marketplace that connects farmers with food, hotel, restaurant, and catering businesses. It provides an e-commerce platform for agricultural products and empowers local farmers by providing market and financial access.",
+      "workarounds": [
+        "Spearheaded the successful migration of legacy code to a cutting-edge architecture, bolstering API performance and delivering exceptional results, including a significant 4x increase in requests handled per second and notable improvements in response time.",
+        "Designed and executed a cutting-edge notification solution, enabling the efficient processing and timely delivery of 10k notifications per hour, resulting in a 20% boost in user response rates and a 15% increase in overall revenue."
+      ],
+      "skills_used": [
+        "Golang",
+        "Javascript",
+        "Typescript",
+        "Redis",
+        "PostgreSQL",
+        "MongoDB",
+        "Google Cloud",
+        "Kafka",
+        "Sentry",
+        "New Relic",
+        "Docker",
+        "Elasticsearch",
+        "Jenkins"
+      ]
+    },
+    {
+      "company": "Bhinneka.Com",
+      "position": "Software Developer",
+      "location": "Jakarta, Indonesia",
+      "start_date": "March 2018",
+      "end_date": "June 2021",
+      "duration": "3 years 4 months",
+      "summary": "Bhinneka.com is an ecommerce company that focuses on selling electronic devices, digital printing systems, and other related products. It was the first ecommerce company established in Indonesia, back in 1993.",
+      "workarounds": [
+        "Streamlined system performance and reliability by successfully migrating the outdated monolithic application to a microservices architecture, resulting in enhanced maintenance efficiency, elevated customer satisfaction, and accelerated order processing.",
+        "Accelerated debugging efforts and facilitated access to production environment information by integrating advanced metrics and comprehensive logs, leading to a 30% decrease in time spent on issue resolution.",
+        "Implemented a robust code scanning process, reducing technical debt by identifying and resolving critical issues; achieved a 50% decrease in post-release bugs and improved overall code efficiency."
+      ],
+      "skills_used": [
+        "Golang",
+        "Python",
+        "Redis",
+        "PostgreSQL",
+        "MongoDB",
+        "ArangoDB",
+        "Amazon S3",
+        "Kafka",
+        "Jaeger",
+        "Sentry",
+        "Docker",
+        "Jenkins"
+      ]
+    },
+    {
+      "company": "Kompas.com",
+      "position": "Web Developer",
+      "location": "Greater Jakarta Area, Indonesia",
+      "start_date": "November 2015",
+      "end_date": "February 2018",
+      "duration": "2 years 4 months",
+      "summary": "Kompas.com is a media company focused on writing online articles and news. It is one of the most popular news websites in Indonesia.",
+      "workarounds": [
+        "Build a reliable sports news site that can serve up to 40k concurrent users.",
+        "Enhanced journalist experience, productivity, learning curve through merging three news applications into a single Content Management System.",
+        "Gain more readers exponentially on the giant social media platform Facebook by creating Facebook Instant Articles. These features allow users to read directly from the Facebook app.",
+        "Ensured our news is at the top of Google search engine results by integrating Google AMP into our platform."
+      ],
+      "skills_used": [
+        "PHP",
+        "Python",
+        "Redis",
+        "Memcache",
+        "Javascript",
+        "MySQL",
+        "Elasticsearch",
+        "MongoDB",
+        "Codeigniter",
+        "Laravel",
+        "Amazon S3",
+        "HTML",
+        "CSS"
+      ]
+    },
+    {
+      "company": "PT. InnPro",
+      "position": "System Developer",
+      "location": "Jakarta, Indonesia",
+      "start_date": "November 2014",
+      "end_date": "September 2015",
+      "duration": "11 months",
+      "summary": "InnPro is a Geographical Information System (GIS) company that focuses on building GIS with the aim of providing data through maps or other means.",
+      "workarounds": [
+        "Improve management decision-making multiple times for opening new company branches or modifying locations for better market reach, a GIS application system can be created for PT. Astra FIF. However, it also improves the revenue.",
+        "Displaying the locations of their branches and headquarters on maps.",
+        "Providing data on the total number of men and women in each province, city, district, and subdistrict, using BPS data.",
+        "Presenting data on the number of individuals earning above or below the minimum regional wage (UMR), based on BPS data."
+      ],
+      "skills_used": [
+        "ArcGIS Javascript",
+        "Dojo Framework",
+        "PHP",
+        "Javascript",
+        "MySQL",
+        "Codeigniter",
+        "Laravel",
+        "HTML",
+        "CSS"
+      ]
+    }
+  ]
+}

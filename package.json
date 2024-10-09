@@ -1,4 +1,14 @@
 {
   "name": "fathiraz-homepage",
-  "packageManager": "yarn@4.4.1"
+  "packageManager": "yarn@4.4.1",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "dependencies": {
+    "bootstrap": "^5.3.3"
+  },
+  "scripts": {
+    "dev:react": "yarn workspace react-app dev"
+  }
 }
