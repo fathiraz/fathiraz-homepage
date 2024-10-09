@@ -21,20 +21,20 @@ As part of my learning process in modern frontend development, I wanted to chall
 - **Framework Options**:
   - **JavaScript Frameworks**:
     - React (default main application)
-    - Vue 3
-    - Svelte
-    - Solid
+    - Vue 3 (soon)
+    - Svelte (soon)
   - **CSS Frameworks**:
     - Bootstrap (default main application)
     - Tailwind
-    - Material
-    - Chakra UI
+    - Bulma
+    - Material (soon)
+    - Chakra UI (soon)
 
 ## Architecture
 
 - **Monorepo Structure**: This project uses **Yarn Workspaces** to manage a monorepo, allowing for efficient dependency management and streamlined development.
 - **Applications**: 
-  - **React Application**: The frontend of the portfolio, built using React and various CSS frameworks.
+  - **React Application**: The frontend of the portfolio, built using React on Vite and various CSS frameworks.
   - **Express.js Application**: A backend service that fetches data from an API, providing the necessary information for the React application.
 
 ## How It Works
@@ -44,8 +44,8 @@ The homepage features a floating select option that allows viewers to switch bet
 ## Tech Stack
 
 - **Frontend**: 
-  - JavaScript Frameworks: React, Vue 3, Svelte, Solid
-  - CSS Frameworks: Bootstrap, Tailwind, Material, Chakra UI
+  - JavaScript Frameworks: React, Vue 3, Svelte
+  - CSS Frameworks: Bootstrap, Tailwind, Bulma, Material, Chakra UI
 
 - **Backend**: 
   - Node.js, Express (for any backend services if needed)
