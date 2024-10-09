@@ -117,8 +117,8 @@ function ResumeTailwind({ cssFramework }) {
                       <p className="text-yellow-400 mb-[10px] italic font-size-[12px]">{experience.start_date} - {experience.end_date} <span className="text-red-500">({experience.duration})</span></p>
                       <p className="text-gray-400 mb-[10px] font-size-[11px]">{experience.summary}</p>
                       <ul className="pl-[20px] list-disc text-gray-400 mb-[0px]">
-                        {experience.workarounds.map((workaround, i) => (
-                          <li className="text-gray-400 mb-[5px] font-size-[11px]">{workaround}</li>
+                        {experience.workarounds.map((workaround, index) => (
+                          <li key={index} className="text-gray-400 mb-[5px] font-size-[11px]">{workaround}</li>
                         ))}
                       </ul>
                     </div>
