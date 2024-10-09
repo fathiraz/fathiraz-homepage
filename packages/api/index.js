@@ -21,7 +21,9 @@ app.get('/api/resume', (req, res) => {
 app.get('/api/config', (req, res) => {
     res.sendFile(path.join(__dirname, '../../public/config.json'));
 });
-
-app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
-});
+// running only not in vercel
+if (process.env.VERCEL_ENV != 'production') {
+    app.listen(PORT, () => {
+        console.log(`Server is running on port ${PORT}`);
+    });
+}
