@@ -73,7 +73,7 @@ function ResumeBulma({ cssFramework }) {
                     </p>
                   </div>
                   <div className="column is-full mt-0">
-                    <div className="columns is-multiline" style={{ margin: '-5px' }}>
+                    <div className="columns is-multiline is-mobile" style={{ margin: '-5px' }}>
                       {resumeData.technology_stack.map((tech, index) => (
                         <div key={index} className="column is-3-desktop is-4-tablet is-6-mobile" style={{ padding: '5px' }}>
                           <div className="is-flex is-align-items-center is-rounded has-background-black-bis has-text-grey-lighter p-1" style={{ border: '0.5px solid', borderColor: '#69748c', borderRadius: '5px', height: '100%' }}>
@@ -96,7 +96,7 @@ function ResumeBulma({ cssFramework }) {
                     </p>
                   </div>
                   <div className="column is-full">
-                    <div className="columns is-multiline" style={{ margin: '-5px' }}>
+                    <div className="columns is-multiline is-mobile" style={{ margin: '-5px' }}>
                       {resumeData.tools.map((tool, index) => (
                         <div key={index} className="column is-3-desktop is-4-tablet is-6-mobile" style={{ padding: '5px' }}>
                           <div className="is-flex is-align-items-center is-rounded has-background-black-bis has-text-grey-lighter p-1" style={{ border: '0.5px solid', borderColor: '#69748c', borderRadius: '5px', height: '100%' }}>

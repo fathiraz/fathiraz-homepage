@@ -64,11 +64,11 @@ function ResumeTailwind({ cssFramework }) {
               <hr className="border-red-900 mb-3 mt-3 h-[0.5px]" />
               <div className="flex flex-col">
                 <p className="text-neutral-content mb-1 m-0"><span className="text-primary">user@portfolio:~$</span> <span>techstack</span></p>
-                <div className="grid grid-cols-4 gap-2">
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
                   {resumeData.technology_stack.map((tech, index) => (
                     <div key={index} className="flex items-center p-1 border border-neutral-content rounded text-neutral-content bg-gray-950">
                       <i className={`devicon-${tech.toLowerCase().replace(/\s+/g, '')}-plain text-xs mr-2`}></i>
-                      <span className="font-mono">{tech}</span>
+                      <span className="font-mono text-xs sm:text-sm">{tech}</span>
                     </div>
                   ))}
                 </div>
@@ -79,11 +79,11 @@ function ResumeTailwind({ cssFramework }) {
              <hr className="border-red-900 mb-3 mt-3 h-[0.5px]" />
               <div className="flex flex-col">
               <p className="text-neutral-content mb-1 m-0"><span className="text-primary">user@portfolio:~$</span> <span>tools</span></p>
-                <div className="grid grid-cols-4 gap-2">
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
                   {resumeData.tools.map((tool, index) => (
                     <div key={index} className="flex items-center p-1 border border-neutral-content rounded text-neutral-content bg-gray-950">
                       <i className={`devicon-${tool.toLowerCase().replace(/\s+/g, '')}-plain text-xs mr-2`}></i>
-                      <span className="font-mono">{tool}</span>
+                      <span className="font-mono text-xs sm:text-sm">{tool}</span>
                     </div>
                   ))}
                 </div>
