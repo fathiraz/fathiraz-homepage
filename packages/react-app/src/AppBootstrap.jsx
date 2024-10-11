@@ -1,12 +1,16 @@
-import React from 'react';
+import PropTypes from 'prop-types';
 import ResumeBootstrap from './ResumeBootstrap';
 
 function AppBootstrap({ cssFramework }) {
   return (
-    <div className="bg-dark text-light min-vh-100 d-flex justify-content-center align-items-center" style={{ backgroundColor: '#272822' }}>
+    <div className="bg-dark-subtle text-light min-vh-100 d-flex justify-content-center align-items-center">
       <ResumeBootstrap cssFramework={cssFramework} />
     </div>
   );
 }
+
+AppBootstrap.propTypes = {
+  cssFramework: PropTypes.string.isRequired,
+};
 
 export default AppBootstrap;

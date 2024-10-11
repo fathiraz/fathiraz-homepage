@@ -29,9 +29,9 @@ To get started with the API, follow these steps:
    ```
 
 2. **Install Dependencies**: 
-   Make sure you have Yarn installed, then run:
+   Make sure you have Npm installed, then run:
    ```bash
-   yarn install
+   npm install
    ```
 
 3. **Run the API**: 

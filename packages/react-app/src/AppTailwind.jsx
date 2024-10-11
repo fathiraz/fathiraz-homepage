@@ -1,12 +1,16 @@
-import React from 'react';
+import PropTypes from 'prop-types';
 import ResumeTailwind from './ResumeTailwind';
 
 function AppTailwind({ cssFramework }) {
   return (
-    <div className="bg-gray-800 text-white min-h-screen flex justify-center items-center" style={{ backgroundColor: '#272822' }}>
+    <div className="bg-neutral-content text-white min-h-screen flex justify-center items-center">
       <ResumeTailwind cssFramework={cssFramework} />
     </div>
   );
 }
+
+AppTailwind.propTypes = {
+  cssFramework: PropTypes.string.isRequired,
+};
 
 export default AppTailwind;
