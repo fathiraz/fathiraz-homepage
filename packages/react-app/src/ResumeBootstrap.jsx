@@ -183,7 +183,7 @@ function ResumeBootstrap({ cssFramework }) {
                 </div>
               </div>
               {/* end of languages */}
-              
+
               {/* start of footer */}
               <hr className='text-light-emphasis mb-3 mt-3' />
               <div className="row">

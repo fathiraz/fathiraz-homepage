@@ -48,6 +48,5 @@ const initApp = async () => {
     </React.StrictMode>
   );
 };
-
 // Call the initApp function
 initApp().catch(console.error);

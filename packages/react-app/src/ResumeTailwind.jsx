@@ -36,7 +36,7 @@ function ResumeTailwind({ cssFramework }) {
     <div className="container mx-auto mt-5 mb-5 max-w-[1300px]">
       <div className="flex justify-center">
         <div className="w-full md:w-10/12 lg:w-8/12">
-          <div className="terminal-window bg-neutral-900 rounded-lg p-5 text-base-content font-mono shadow-lg text-xs">
+          <div className="terminal-window bg-neutral-900 rounded-lg p-5 text-base-content font-mono shadow-lg text-xs mx-2 sm:mx-0">
             <div className="terminal-header flex justify-between m-1">
               <div className="terminal-buttons flex space-x-2">
                 <span className="bg-error rounded-full w-3 h-3"></span>
@@ -159,7 +159,7 @@ function ResumeTailwind({ cssFramework }) {
       </div>
 
       {/* start of floating button */}
-      <div className="fixed m-2 top-1 right-1 z-50 bg-neutral-900 border border-neutral-content rounded-lg w-[150px]">
+      <div className="fixed m-2 top-1 right-1 z-50 bg-neutral-900/75 border border-neutral-content rounded-lg w-[150px]">
         <div className="card shadow-xl flex flex-col items-center">
           <div className="card-body p-3">
             <h6 className="card-title" style={{ fontSize: '0.7rem' }}>

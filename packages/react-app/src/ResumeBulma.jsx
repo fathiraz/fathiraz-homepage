@@ -36,7 +36,7 @@ function ResumeBulma({ cssFramework }) {
     <div className="container mt-5 mb-5" style={{ maxWidth: '1300px' }}>
         <div className="columns is-justify-content-center">
         <div className="column is-full is-10-tablet is-8-desktop">
-            <div className="box has-background-black-ter p-4 is-rounded" style={{ fontFamily: 'monospace', fontSize: '0.75rem', boxShadow: '0 4px 12px rgba(0, 0, 0, 0.3)' }}>
+            <div className="terminal-window box has-background-black-ter p-4 is-rounded mx-2" style={{ fontFamily: 'monospace', fontSize: '0.75rem', boxShadow: '0 4px 12px rgba(0, 0, 0, 0.3)' }}>
               <div className="terminal-header is-flex is-justify-content-space-between m-1">
                   <div className="terminal-buttons">
                   <span className="button is-danger is-small is-inline-block is-rounded mr-1"></span>
@@ -195,7 +195,7 @@ function ResumeBulma({ cssFramework }) {
         </div>
 
         {/* start of floating button */}
-        <div className="card m-2 has-background-black-ter" style={{ position: 'fixed', top: '2.5px', right: '2.5px', width: '150px' }}>
+        <div className="card m-2 has-background-black-ter" style={{ position: 'fixed', top: '2.5px', right: '2.5px', border: '0.5px solid', borderColor: '#69748c', borderRadius: '5px', width: '150px' }}>
           <div className="card-content p-3 is-flex is-flex-direction-column is-align-items-center">
             <div className="media-content mb-2">
               <h6 className="title is-full has-text-light" style={{ fontSize: '0.7rem' }}>
