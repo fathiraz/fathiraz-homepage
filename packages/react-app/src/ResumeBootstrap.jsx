@@ -1,26 +1,12 @@
+// this component displays the resume information in a terminal-like interface with bootstrap css framework
+// allowing users to view personal details, tech stack, tools, education, experiences, languages, 
+// and provides an option to change the CSS framework dynamically
+
 import PropTypes from 'prop-types';
-import { useEffect, useState } from 'react';
-import { fetchResumeData, fetchConfigData } from '../../../utils/api'; 
+import { useResumeData } from './DataProvider';
 
 function ResumeBootstrap({ cssFramework }) {
-  const [resumeData, setResumeData] = useState(null);
-  const [frameworks, setFrameworks] = useState([]);
-
-  useEffect(() => {
-    async function getData() {
-      const data = await fetchResumeData();
-      setResumeData(data);
-    }
-    getData();
-  }, []);
-
-  useEffect(() => {
-    async function getConfig() {
-      const configData = await fetchConfigData(); 
-      setFrameworks(configData.frameworks.css);
-    }
-    getConfig();
-  }, []);
+  const { resumeData, configData, loading } = useResumeData();
 
   const handleFrameworkChange = (framework) => {
     const url = new URL(window.location);
@@ -28,8 +14,38 @@ function ResumeBootstrap({ cssFramework }) {
     window.location.href = url.toString(); // Redirect to the new URL
   };
 
-  if (!resumeData) {
-    return <div className="text-center mt-5">Loading...</div>;
+  if (loading) {
+    return (
+      <div className="container mt-4 mb-4 animate__animated animate__fadeIn" style={{ maxWidth: '1300px' }}>
+        <div className="row justify-content-center">
+          <div className="col-12 col-md-10 col-lg-8">
+            <div className="terminal-window bg-dark p-4 rounded" style={{ fontFamily: 'monospace', fontSize: '0.75rem', boxShadow: '0 4px 12px rgba(0, 0, 0, 0.3)' }}>
+              <div className="terminal-header d-flex justify-content-between m-1">
+                <div className="terminal-buttons">
+                  <span className="bg-danger rounded-circle d-inline-block me-2" style={{ width: '12px', height: '12px' }}></span>
+                  <span className="bg-warning rounded-circle d-inline-block me-2" style={{ width: '12px', height: '12px' }}></span>
+                  <span className="bg-success rounded-circle d-inline-block" style={{ width: '12px', height: '12px' }}></span>
+                </div>
+                <div className="terminal-title text-light">Resume Terminal</div>
+              </div>
+              <hr className='text-light-emphasis mb-3 mt-3' />
+              <div className="terminal-body">
+                {Array.from({ length: 10 }, (_, index) => (
+                  <div key={index} className="placeholder-glow">
+                    <span className="placeholder col-7"></span>
+                    <span className="placeholder col-4"></span>
+                    <span className="placeholder col-4"></span>
+                    <span className="placeholder col-6"></span>
+                    <span className="placeholder col-8"></span>
+                    <hr className='text-light-emphasis mb-3 mt-3' />
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
   }
 
   return (
@@ -52,13 +68,19 @@ function ResumeBootstrap({ cssFramework }) {
               <div className="row">
                 <div className="col-12">
                   <div className='m-9 d-flex flex-column gap-1'>
-                    <p className='text-light text-opacity-75 mb-1 m-0'><span className='text-primary'>user@portfolio:~$</span> <span>whoami</span></p>
+                    <p className='text-light text-opacity-75 mb-1 m-0'>
+                      <span className='text-primary'>user@portfolio:~$</span> <span>whoami</span>
+                    </p>
                     <p className='text-light text-opacity-75 m-0'>👋🏻 Hello, I&apos;m <span className='text-success'>{resumeData.name}</span></p>
                     <p className='text-light text-opacity-75 m-0'>📕 <span className='text-warning'>{resumeData.title}</span></p>
                     <p className='text-light text-opacity-75 m-0'>📖 <span>{resumeData.summary}</span></p>
                     <p className='text-light text-opacity-75 m-0'>🌏 <span>{resumeData.work_preference}</span></p>
-                    <p className='text-light text-opacity-75 m-0'>🔗 <a className='text-info text-decoration-none' href={`https://${resumeData.contact.linkedin}`} target="_blank" rel="noopener noreferrer">{resumeData.contact.linkedin}</a></p>
-                    <p className='text-light text-opacity-75 m-0'>🐙 <a className='text-info text-decoration-none' href={`https://${resumeData.contact.github}`} target="_blank" rel="noopener noreferrer">{resumeData.contact.github}</a></p>
+                    <p className='text-light text-opacity-75 m-0'>
+                      🔗 <a className='text-info text-decoration-none' href={`https://${resumeData.contact.linkedin}`} target="_blank" rel="noopener noreferrer">{resumeData.contact.linkedin}</a>
+                    </p>
+                    <p className='text-light text-opacity-75 m-0'>
+                      🐙 <a className='text-info text-decoration-none' href={`https://${resumeData.contact.github}`} target="_blank" rel="noopener noreferrer">{resumeData.contact.github}</a>
+                    </p>
                   </div>
                 </div>
               </div>
@@ -114,19 +136,19 @@ function ResumeBootstrap({ cssFramework }) {
               <hr className='text-danger mb-3 mt-3' />
               <div className="row">
                 <div className="col-12">
-                <p className='text-light text-opacity-75 mb-1 m-0'>
-                  <span className='text-primary'>user@portfolio:~$</span> <span>edu</span>
-                </p>
+                  <p className='text-light text-opacity-75 mb-1 m-0'>
+                    <span className='text-primary'>user@portfolio:~$</span> <span>edu</span>
+                  </p>
                 </div>
                 <div className="col-12">
                   <div className="row">
                     {resumeData.educations.map((education, index) => (
                       <div key={index} className="col-12 p-3 w-100 border border-secondary rounded mt-1 mb-1 bg-black bg-opacity-25">
                         <p className='text-info fw-bold mb-2' style={{ fontSize: '13px' }}>{education.university}</p>
-                        <p className='text-warning fw-bold mb-1' style={{  fontSize: '12px' }}>{education.location}</p>
-                        <p className='fw-bold mb-1' style={{  fontSize: '12px' }}>{education.degree} in <span className='text-success'>{education.major}</span></p>
-                        <p className='text-danger fw-bold mb-1' style={{  fontSize: '12px' }}><span>{education.start}</span> - <span>{education.end}</span></p>
-                        <p className='fst-italic text-light text-opacity-75 mb-1' style={{  fontSize: '12px' }}>{education.grade}</p>
+                        <p className='text-warning fw-bold mb-1' style={{ fontSize: '12px' }}>{education.location}</p>
+                        <p className='fw-bold mb-1' style={{ fontSize: '12px' }}>{education.degree} in <span className='text-success'>{education.major}</span></p>
+                        <p className='text-danger fw-bold mb-1' style={{ fontSize: '12px' }}><span>{education.start}</span> - <span>{education.end}</span></p>
+                        <p className='fst-italic text-light text-opacity-75 mb-1' style={{ fontSize: '12px' }}>{education.grade}</p>
                       </div>
                     ))}
                   </div>
@@ -138,7 +160,7 @@ function ResumeBootstrap({ cssFramework }) {
               <hr className='text-danger mb-3 mt-3' />
               <div className="row">
                 <div className="col-12">
-                <p className='text-light text-opacity-75 mb-1 m-0'>
+                  <p className='text-light text-opacity-75 mb-1 m-0'>
                     <span className='text-primary'>user@portfolio:~$</span> <span className='text-light text-opacity-75'>exp</span>
                   </p>
                 </div>
@@ -212,7 +234,7 @@ function ResumeBootstrap({ cssFramework }) {
             <option value="" disabled>
               CSS Framework
             </option>
-            {frameworks.map((framework) => (
+            {configData.frameworks.css.map((framework) => (
               <option key={framework.name} value={framework.name}>
                 {framework.name}
               </option>

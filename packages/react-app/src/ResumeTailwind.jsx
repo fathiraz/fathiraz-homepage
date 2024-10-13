@@ -1,35 +1,49 @@
+// this component displays the resume information in a terminal-like interface using the Tailwind CSS framework.
+// it allows users to view personal details, tech stack, tools, education, experiences, languages, 
+// and provides an option to change the CSS framework dynamically.
+
 import PropTypes from 'prop-types';
-import { useEffect, useState } from 'react';
-import { fetchResumeData, fetchConfigData } from '../../../utils/api'; 
+import { useResumeData } from './DataProvider';
 
 function ResumeTailwind({ cssFramework }) {
-  const [resumeData, setResumeData] = useState(null);
-  const [frameworks, setFrameworks] = useState([]);
-
-  useEffect(() => {
-    async function getData() {
-      const data = await fetchResumeData();
-      setResumeData(data);
-    }
-    getData();
-  }, []);
-
-  useEffect(() => {
-    async function getConfig() {
-      const configData = await fetchConfigData(); 
-      setFrameworks(configData.frameworks.css);
-    }
-    getConfig();
-  }, []);
+  const { resumeData, configData, loading } = useResumeData();
 
   const handleFrameworkChange = (framework) => {
     const url = new URL(window.location);
     url.searchParams.set('css', framework.name);
-    window.location.href = url.toString();
+    window.location.href = url.toString(); // Redirect to the new URL
   };
 
-  if (!resumeData) {
-    return <div className="text-center mt-5">Loading...</div>;
+  if (loading) {
+    return (
+      <div className="container mx-auto mt-5 mb-5 max-w-[1300px] ">
+        <div className="flex justify-center">
+          <div className="w-full md:w-10/12 lg:w-8/12">
+            <div className="terminal-window bg-neutral-900 rounded-lg p-5 text-base-content font-mono shadow-lg text-xs mx-2 sm:mx-0">
+            <div className="terminal-header flex justify-between m-1">
+              <div className="terminal-buttons flex space-x-2">
+                <span className="bg-error rounded-full w-3 h-3"></span>
+                <span className="bg-warning rounded-full w-3 h-3"></span>
+                <span className="bg-success rounded-full w-3 h-3"></span>
+              </div>
+              <div className="terminal-tile text-white">Resume Terminal</div>
+            </div>
+            <hr className="border-white mb-3 mt-3 h-[0.5px]" />
+            <div className="terminal-body space-y-5">
+              {Array.from({ length: 10 }, (_, index) => (
+                <div key={index} className="space-y-3">
+                  <div className="skeleton h-3 w-full"></div>
+                  <div className="skeleton h-3 w-3/4"></div>
+                  <div className="skeleton h-3 w-1/2"></div>
+                  <hr className="border-white mb-3 mt-3 h-[0.5px]" />
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    );
   }
 
   return (
@@ -50,20 +64,36 @@ function ResumeTailwind({ cssFramework }) {
 
               {/* start of whoami */}
               <div className="flex flex-col gap-1">
-                <p className="text-neutral-content mb-1 m-0"><span className="text-primary">user@portfolio:~$</span> <span>whoami</span></p>
-                <p className="text-neutral-content m-0">👋🏻 Hello, I&apos;m <span className="text-success">{resumeData.name}</span></p>
-                <p className="text-neutral-content m-0">📕 <span className="text-warning">{resumeData.title}</span></p>
-                <p className="text-neutral-content m-0">📖 <span>{resumeData.summary}</span></p>
-                <p className="text-neutral-content m-0">🌏 <span>{resumeData.work_preference}</span></p>
-                <p className="text-neutral-content m-0">🔗 <a className="text-info no-underline" href={`https://${resumeData.contact.linkedin}`} target="_blank" rel="noopener noreferrer">{resumeData.contact.linkedin}</a></p>
-                <p className="text-neutral-content m-0">🐙 <a className="text-info no-underline" href={`https://${resumeData.contact.github}`} target="_blank" rel="noopener noreferrer">{resumeData.contact.github}</a></p>
+                <p className="text-neutral-content mb-1 m-0">
+                  <span className="text-primary">user@portfolio:~$</span> <span>whoami</span>
+                </p>
+                <p className="text-neutral-content m-0">
+                  👋🏻 Hello, I&apos;m <span className="text-success">{resumeData.name}</span>
+                </p>
+                <p className="text-neutral-content m-0">
+                  📕 <span className="text-warning">{resumeData.title}</span>
+                </p>
+                <p className="text-neutral-content m-0">
+                  📖 <span>{resumeData.summary}</span>
+                </p>
+                <p className="text-neutral-content m-0">
+                  🌏 <span>{resumeData.work_preference}</span>
+                </p>
+                <p className="text-neutral-content m-0">
+                  🔗 <a className="text-info no-underline" href={`https://${resumeData.contact.linkedin}`} target="_blank" rel="noopener noreferrer">{resumeData.contact.linkedin}</a>
+                </p>
+                <p className="text-neutral-content m-0">
+                  🐙 <a className="text-info no-underline" href={`https://${resumeData.contact.github}`} target="_blank" rel="noopener noreferrer">{resumeData.contact.github}</a>
+                </p>
               </div>
               {/* end of whoami */}
 
               {/* start of techstack */}
               <hr className="border-red-900 mb-3 mt-3 h-[0.5px]" />
               <div className="flex flex-col">
-                <p className="text-neutral-content mb-1 m-0"><span className="text-primary">user@portfolio:~$</span> <span>techstack</span></p>
+                <p className="text-neutral-content mb-1 m-0">
+                  <span className="text-primary">user@portfolio:~$</span> <span>techstack</span>
+                </p>
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
                   {resumeData.technology_stack.map((tech, index) => (
                     <div key={index} className="flex items-center p-1 border border-neutral-content rounded text-neutral-content bg-gray-950">
@@ -76,9 +106,11 @@ function ResumeTailwind({ cssFramework }) {
               {/* end of techstack */}
 
               {/* start of tools */}
-             <hr className="border-red-900 mb-3 mt-3 h-[0.5px]" />
+              <hr className="border-red-900 mb-3 mt-3 h-[0.5px]" />
               <div className="flex flex-col">
-              <p className="text-neutral-content mb-1 m-0"><span className="text-primary">user@portfolio:~$</span> <span>tools</span></p>
+                <p className="text-neutral-content mb-1 m-0">
+                  <span className="text-primary">user@portfolio:~$</span> <span>tools</span>
+                </p>
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
                   {resumeData.tools.map((tool, index) => (
                     <div key={index} className="flex items-center p-1 border border-neutral-content rounded text-neutral-content bg-gray-950">
@@ -91,16 +123,20 @@ function ResumeTailwind({ cssFramework }) {
               {/* end of tools */}
 
               {/* start of educations */}
-             <hr className="border-red-900 mb-3 mt-3 h-[0.5px]" />
+              <hr className="border-red-900 mb-3 mt-3 h-[0.5px]" />
               <div className="flex flex-col">
-              <p className="text-neutral-content mb-1 m-0"><span className="text-primary">user@portfolio:~$</span> <span>edu</span></p>
+                <p className="text-neutral-content mb-1 m-0">
+                  <span className="text-primary">user@portfolio:~$</span> <span>edu</span>
+                </p>
                 <div className="grid grid-cols-1 gap-2">
                   {resumeData.educations.map((education, index) => (
                     <div key={index} className="p-4 border border-neutral-content rounded text-neutral-content bg-gray-950 mt-1 mb-1">
                       <p className="text-info font-bold mb-2" style={{ fontSize: '13px' }}>{education.university}</p>
                       <p className="text-warning font-bold mb-1 text-xs">{education.location}</p>
                       <p className="font-bold mb-1 text-xs">{education.degree} in <span className="text-success">{education.major}</span></p>
-                      <p className="text-neutral-content mb-1 text-xs"><span className="text-red-500">{education.start}</span> - <span className="text-red-500">{education.end}</span></p>
+                      <p className="text-neutral-content mb-1 text-xs">
+                        <span className="text-red-500">{education.start}</span> - <span className="text-red-500">{education.end}</span>
+                      </p>
                       <p className="text-neutral-content italic mb-1 text-xs">{education.grade}</p>
                     </div>
                   ))}
@@ -109,14 +145,20 @@ function ResumeTailwind({ cssFramework }) {
               {/* end of educations */}
 
               {/* start of experiences */}
-             <hr className="border-red-900 mb-3 mt-3 h-[0.5px]" />
+              <hr className="border-red-900 mb-3 mt-3 h-[0.5px]" />
               <div className="flex flex-col">
-              <p className="text-neutral-content mb-1 m-0"><span className="text-primary">user@portfolio:~$</span> <span>exp</span></p>
+                <p className="text-neutral-content mb-1 m-0">
+                  <span className="text-primary">user@portfolio:~$</span> <span>exp</span>
+                </p>
                 <div className="grid grid-cols-1 gap-2">
                   {resumeData.experiences.map((experience, index) => (
-                   <div key={index} className="p-4 border border-neutral-content rounded text-neutral-content bg-gray-950 mt-1 mb-1">
-                      <p className="text-success font-bold mb-2" style={{ fontSize: '13px' }}>{experience.position} <span className="text-neutral-content">at</span> <span className="text-purple-400">{experience.company}</span></p>
-                      <p className="text-warning mb-1 italic text-xs">{experience.start_date} - {experience.end_date} <span className="text-danger">({experience.duration})</span></p>
+                    <div key={index} className="p-4 border border-neutral-content rounded text-neutral-content bg-gray-950 mt-1 mb-1">
+                      <p className="text-success font-bold mb-2" style={{ fontSize: '13px' }}>
+                        {experience.position} <span className="text-neutral-content">at</span> <span className="text-purple-400">{experience.company}</span>
+                      </p>
+                      <p className="text-warning mb-1 italic text-xs">
+                        {experience.start_date} - {experience.end_date} <span className="text-danger">({experience.duration})</span>
+                      </p>
                       <p className="text-neutral-content mb-1" style={{ fontSize: '11px' }}>{experience.summary}</p>
                       <ul className="pl-5 list-disc text-neutral-content mb-0">
                         {experience.workarounds.map((workaround, index) => (
@@ -130,9 +172,11 @@ function ResumeTailwind({ cssFramework }) {
               {/* end of experiences */}
 
               {/* start of languages */}
-             <hr className="border-red-900 mb-3 mt-3 h-[0.5px]" />
+              <hr className="border-red-900 mb-3 mt-3 h-[0.5px]" />
               <div className="flex flex-col">
-              <p className="text-neutral-content mb-1 m-0"><span className="text-primary">user@portfolio:~$</span> <span>lang</span></p>
+                <p className="text-neutral-content mb-1 m-0">
+                  <span className="text-primary">user@portfolio:~$</span> <span>lang</span>
+                </p>
                 <div className="grid grid-cols-1 gap-2">
                   {resumeData.languages.map((language, index) => (
                     <div key={index} className="flex border border-neutral-content justify-between p-1 mt-1 mb-1 rounded text-neutral-content bg-gray-950">
@@ -175,7 +219,7 @@ function ResumeTailwind({ cssFramework }) {
               <option value="" disabled>
                 CSS Framework
               </option>
-              {frameworks.map((framework) => (
+              {configData.frameworks.css.map((framework) => (
                 <option key={framework.name} value={framework.name}>
                   {framework.name}
                 </option>
