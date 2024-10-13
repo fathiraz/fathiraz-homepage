@@ -1,7 +1,7 @@
 {
   "name": "Fathiraz Arthuro",
   "title": "Backend Engineer",
-  "summary": "A person who likes to solve problems and learn new things. I loves build something that make people life easier. I have more than 8 years experience in software development and i'm a backend engineer. Ps: I'm a ice americano guy ☕",
+  "summary": "A person who likes to solve problems and learn new things. I love to build something that make people's life easier. I have more than 8 years experience in software development and i'm a backend engineer. Ps: I'm an ice americano guy ☕",
   "work_preference": "I'm looking for a remote job and open to relocate to the place that has good coffee and good food",
   "contact": {
     "linkedin": "linkedin.com/in/fathiraz-arthuro",
@@ -136,7 +136,7 @@
       "start_date": "March 2018",
       "end_date": "June 2021",
       "duration": "3 years 4 months",
-      "summary": "Bhinneka.com is an ecommerce company that focuses on selling electronic devices, digital printing systems, and other related products. It was the first ecommerce company established in Indonesia, back in 1993.",
+      "summary": "Bhinneka.com is an e-commerce company that focuses on selling electronic devices, digital printing systems, and other related products. It was the first ecommerce company established in Indonesia, back in 1993.",
       "workarounds": [
         "Streamlined system performance and reliability by successfully migrating the outdated monolithic application to a microservices architecture, resulting in enhanced maintenance efficiency, elevated customer satisfaction, and accelerated order processing.",
         "Accelerated debugging efforts and facilitated access to production environment information by integrating advanced metrics and comprehensive logs, leading to a 30% decrease in time spent on issue resolution.",
@@ -164,7 +164,7 @@
       "start_date": "November 2015",
       "end_date": "February 2018",
       "duration": "2 years 4 months",
-      "summary": "Kompas.com is a media company focused on writing online articles and news. It is one of the most popular news websites in Indonesia.",
+      "summary": "Kompas.com is a media company focused on writing online articles and news. It is one of the most popular news website in Indonesia.",
       "workarounds": [
         "Build a reliable sports news site that can serve up to 40k concurrent users.",
         "Enhanced journalist experience, productivity, learning curve through merging three news applications into a single Content Management System.",
