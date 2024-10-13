@@ -25,7 +25,6 @@ const initApp = async () => {
       switch (framework) {
         case 'bootstrap':
           await import('bootstrap/dist/css/bootstrap.min.css');
-          await import('./assets/style-bootstrap.css');
           break;
         case 'bulma':
           await import('bulma/css/bulma.min.css');
