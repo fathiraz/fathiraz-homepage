@@ -8,28 +8,28 @@
     <em><code>❯ A dynamic portfolio homepage showcasing multiple JavaScript and CSS frameworks</code></em>
 </p>
 <p align="center">
-	<img src="https://img.shields.io/github/license/fathiraz/fathiraz-homepage?style=flat-square&logo=opensourceinitiative&logoColor=white&color=0080ff" alt="license">
-	<img src="https://img.shields.io/github/last-commit/fathiraz/fathiraz-homepage?style=flat-square&logo=git&logoColor=white&color=0080ff" alt="last-commit">
-	<img src="https://img.shields.io/github/languages/top/fathiraz/fathiraz-homepage?style=flat-square&color=0080ff" alt="repo-top-language">
-	<img src="https://img.shields.io/github/languages/count/fathiraz/fathiraz-homepage?style=flat-square&color=0080ff" alt="repo-language-count">
+	<img src="https://img.shields.io/github/license/fathiraz/fathiraz-homepage?style=for-the-badge&logo=mit&logoColor=white&color=0080ff" alt="license">
+	<img src="https://img.shields.io/github/last-commit/fathiraz/fathiraz-homepage?style=for-the-badge&logo=git&logoColor=white&color=0080ff" alt="last-commit">
+	<img src="https://img.shields.io/github/languages/top/fathiraz/fathiraz-homepage?style=for-the-badge&color=0080ff" alt="repo-top-language">
+	<img src="https://img.shields.io/github/languages/count/fathiraz/fathiraz-homepage?style=for-the-badge&color=0080ff" alt="repo-language-count">
 </p>
 <p align="center">
 		<em>Built with the tools and technologies:</em>
 </p>
 <p align="center">
-	<img src="https://img.shields.io/badge/JavaScript-F7DF1E.svg?style=flat-square&logo=JavaScript&logoColor=black" alt="JavaScript">
-	<img src="https://img.shields.io/badge/HTML5-E34F26.svg?style=flat-square&logo=HTML5&logoColor=white" alt="HTML5">
-	<img src="https://img.shields.io/badge/Bootstrap-7952B3.svg?style=flat-square&logo=Bootstrap&logoColor=white" alt="Bootstrap">
-  <img src="https://img.shields.io/badge/Tailwind_CSS-a5f3fc?style=flat-square&logo=tailwind-css&logoColor=white" alt="Tailwind">
-  <img src="https://img.shields.io/badge/Bulma-00D1B2.svg?style=flat-square&logo=Bulma&logoColor=white" alt="Bulma">
-  <img src="https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white" alt="Css3">
+	<img src="https://img.shields.io/badge/JavaScript-F7DF1E.svg?style=for-the-badge&logo=JavaScript&logoColor=black" alt="JavaScript">
+	<img src="https://img.shields.io/badge/HTML5-E34F26.svg?style=for-the-badge&logo=HTML5&logoColor=white" alt="HTML5">
+	<img src="https://img.shields.io/badge/Bootstrap-7952B3.svg?style=for-the-badge&logo=Bootstrap&logoColor=white" alt="Bootstrap">
+  <img src="https://img.shields.io/badge/Tailwind_CSS-a5f3fc?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind">
+  <img src="https://img.shields.io/badge/Bulma-00D1B2.svg?style=for-the-badge&logo=Bulma&logoColor=white" alt="Bulma">
+  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="Css3">
 	<br>
-	<img src="https://img.shields.io/badge/React-61DAFB.svg?style=flat-square&logo=React&logoColor=black" alt="React">
-	<img src="https://img.shields.io/badge/ESLint-4B32C3.svg?style=flat-square&logo=ESLint&logoColor=white" alt="ESLint">
-  <img src="https://img.shields.io/badge/Vite-646CFF.svg?style=flat-square&logo=Vite&logoColor=white" alt="Vite">
-  <img src="https://img.shields.io/badge/Node.js-43853D?style=flat-square&logo=node.js&logoColor=white" alt="Nodejs">
-	<img src="https://img.shields.io/badge/Express-000000.svg?style=flat-square&logo=Express&logoColor=white" alt="Express">
-	<img src="https://img.shields.io/badge/json-5E5C5C?style=flat-square&logo=json&logoColor=white" alt="JSON">
+	<img src="https://img.shields.io/badge/React-61DAFB.svg?style=for-the-badge&logo=React&logoColor=black" alt="React">
+	<img src="https://img.shields.io/badge/ESLint-4B32C3.svg?style=for-the-badge&logo=ESLint&logoColor=white" alt="ESLint">
+  <img src="https://img.shields.io/badge/Vite-646CFF.svg?style=for-the-badge&logo=Vite&logoColor=white" alt="Vite">
+  <img src="https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white" alt="Nodejs">
+	<img src="https://img.shields.io/badge/Express-000000.svg?style=for-the-badge&logo=Express&logoColor=white" alt="Express">
+	<img src="https://img.shields.io/badge/json-5E5C5C?style=for-the-badge&logo=json&logoColor=white" alt="JSON">
 </p>
 
 <br>
