@@ -45,6 +45,7 @@
   - [📦 Installation](#-installation)
   - [🤖 Usage](#-usage)
 - [📌 Project Roadmap](#-project-roadmap)
+- [📸 Screenshot](#-screenshot)
 - [🤝 Contributing](#-contributing)
 - [🎗 License](#-license)
 - [🙌 Acknowledgments](#-acknowledgments)
@@ -62,7 +63,7 @@ This project is a dynamic portfolio homepage that showcases multiple JavaScript 
 
 - **Dynamic Framework Selection**: Users can choose between different JavaScript and CSS frameworks.
 - **Monorepo Structure**: Uses Npm Workspaces for efficient dependency management.
-- **Multiple Applications**: 
+- **Multiple Applications**:
   - React Application (frontend)
   - Express.js Application (backend service)
 - **Framework Options**:
@@ -207,6 +208,16 @@ Framework Options
   - [x] **`Tailwind`**: <strike>Tailwind CSS framework</strike>
   - [ ] **`Uikit`**: Uikit CSS framework
   - [ ] **`Foundation`**: Foundation CSS framework
+
+---
+
+## 📸 Screenshot
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/fathiraz/fathiraz-homepage/refs/heads/main/public/images/react-bootstrap.png" width="30%"></img>
+  <img src="https://raw.githubusercontent.com/fathiraz/fathiraz-homepage/refs/heads/main/public/images/react-bulma.png" width="30%"></img>
+  <img src="https://raw.githubusercontent.com/fathiraz/fathiraz-homepage/refs/heads/main/public/images/react-tailwind.png" width="30%"></img> 
+</p>
 
 ---
 
