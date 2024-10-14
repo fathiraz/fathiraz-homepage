@@ -2,7 +2,7 @@ const BASE_URL = 'https://fathiraz-homepage-api.vercel.app';
 
 export async function fetchResumeData() {
   try {
-    const response = await fetch(`${BASE_URL}/api/resume`);
+    const response = await fetch(`${BASE_URL}/api/resume?v=${Date.now()}`);
     if (!response.ok) {
       throw new Error('Network response was not ok');
     }
@@ -16,7 +16,7 @@ export async function fetchResumeData() {
 
 export async function fetchConfigData() {
   try {
-    const response = await fetch(`${BASE_URL}/api/config`);
+    const response = await fetch(`${BASE_URL}/api/config?v=${Date.now()}`);
     if (!response.ok) {
       throw new Error('Network response was not ok');
     }

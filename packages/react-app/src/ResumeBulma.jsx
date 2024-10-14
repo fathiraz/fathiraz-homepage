@@ -19,7 +19,7 @@ function ResumeBulma({ cssFramework }) {
       <div className="container mt-5 mb-5" style={{ maxWidth: '1300px' }}>
         <div className="columns is-justify-content-center">
           <div className="column is-full is-10-tablet is-8-desktop">
-            <div className="terminal-window box has-background-black-ter p-4 is-rounded mx-2" style={{ fontFamily: 'monospace', fontSize: '0.75rem', boxShadow: '0 4px 12px rgba(0, 0, 0, 0.3)' }}>
+            <div className="terminal-window box has-background-black-ter p-4 is-rounded mx-2" style={{ fontFamily: 'monospace', fontSize: '0.875rem', boxShadow: '0 4px 12px rgba(0, 0, 0, 0.3)' }}>
               <div className="terminal-header is-flex is-justify-content-space-between m-1">
                 <div className="terminal-buttons">
                   <span className="button is-danger is-small is-inline-block is-rounded mr-1"></span>
@@ -50,7 +50,7 @@ function ResumeBulma({ cssFramework }) {
     <div className="container mt-5 mb-5" style={{ maxWidth: '1300px' }}>
       <div className="columns is-justify-content-center">
         <div className="column is-full is-10-tablet is-8-desktop">
-          <div className="terminal-window box has-background-black-ter p-4 is-rounded mx-2" style={{ fontFamily: 'monospace', fontSize: '0.75rem', boxShadow: '0 4px 12px rgba(0, 0, 0, 0.3)' }}>
+          <div className="terminal-window box has-background-black-ter p-4 is-rounded mx-2" style={{ fontFamily: 'monospace', fontSize: '0.875rem', boxShadow: '0 4px 12px rgba(0, 0, 0, 0.3)' }}>
             <div className="terminal-header is-flex is-justify-content-space-between m-1">
               <div className="terminal-buttons">
                 <span className="button is-danger is-small is-inline-block is-rounded mr-1"></span>
@@ -136,11 +136,11 @@ function ResumeBulma({ cssFramework }) {
                   <div className="columns is-multiline">
                     {resumeData.educations.map((education, index) => (
                       <div key={index} className="column p-3 is-full is-rounded has-background-black-bis has-text-grey-lighter mt-1 mb-1" style={{ border: '0.5px solid', borderColor: '#69748c', borderRadius: '5px' }}>
-                        <p className='has-text-info has-text-weight-bold mb-2' style={{ fontSize: '13px' }}>{education.university}</p>
-                        <p className='has-text-warning mb-1' style={{ fontSize: '12px' }}>{education.location}</p>
-                        <p className='has-text-weight-bold mb-1' style={{ fontSize: '12px' }}>{education.degree} in <span className='has-text-success'>{education.major}</span></p>
-                        <p className='has-text-danger has-text-weight-bold mb-1' style={{ fontSize: '12px' }}><span>{education.start}</span> - <span>{education.end}</span></p>
-                        <p className='has-text-grey-lighter is-italic mb-1' style={{ fontSize: '12px' }}>{education.grade}</p>
+                        <p className='has-text-info has-text-weight-bold mb-2' style={{ fontSize: '15px' }}>{education.university}</p>
+                        <p className='has-text-warning mb-1' style={{ fontSize: '14px' }}>{education.location}</p>
+                        <p className='has-text-weight-bold mb-1' style={{ fontSize: '14px' }}>{education.degree} in <span className='has-text-success'>{education.major}</span></p>
+                        <p className='has-text-danger has-text-weight-bold mb-1' style={{ fontSize: '14px' }}><span>{education.start}</span> - <span>{education.end}</span></p>
+                        <p className='has-text-grey-lighter is-italic mb-1' style={{ fontSize: '14px' }}>{education.grade}</p>
                       </div>
                     ))}
                   </div>
@@ -158,16 +158,21 @@ function ResumeBulma({ cssFramework }) {
                   <div className="columns is-multiline">
                     {resumeData.experiences.map((experience, index) => (
                       <div key={index} className="column p-3 is-full is-rounded has-background-black-bis has-text-grey-lighter mt-1 mb-1" style={{ border: '0.5px solid', borderColor: '#69748c', borderRadius: '5px' }}>
-                        <p className='has-text-success has-text-weight-bold mb-2' style={{ fontSize: '13px' }}>
+                        <p className='has-text-success has-text-weight-bold mb-2' style={{ fontSize: '15px' }}>
                           {experience.position} <span className='has-text-white-ter'>at </span> <span style={{ color: '#C678DD' }}>{experience.company}</span>
                         </p>
-                        <p className='has-text-warning is-italic mb-1' style={{ fontSize: '12px' }}>{experience.start_date} - {experience.end_date} <span className='has-text-danger'>({experience.duration})</span></p>
-                        <p className='has-text-grey-lighter mb-1' style={{ fontSize: '11px' }}>{experience.summary}</p>
+                        <p className='has-text-warning is-italic mb-1' style={{ fontSize: '14px' }}>{experience.start_date} - {experience.end_date} <span className='has-text-danger'>({experience.duration})</span></p>
+                        <p className='has-text-grey-lighter mb-1' style={{ fontSize: '13px' }}>{experience.summary}</p>
                         <ul className='has-text-grey-lighter pl-5 mb-0' style={{ listStyleType: 'circle' }}>
                           {experience.workarounds.map((workaround, i) => (
-                            <li key={i} className='has-text-grey-lighter mb-1' style={{ fontSize: '11px' }}> {workaround}</li>
+                            <li key={i} className='has-text-grey-lighter mb-1' style={{ fontSize: '13px' }}> {workaround}</li>
                           ))}
                         </ul>
+                        <div className="buttons is-gap-1 mt-2">
+                          {experience.skills_used.map((skill, i) => (
+                            <span key={i} className="button is-small is-rounded is-link m-0 p-1 has-text-weight-bold" style={{ fontSize: '10px' }}>{skill}</span>
+                          ))}
+                        </div>
                       </div>
                     ))}
                   </div>
@@ -198,7 +203,7 @@ function ResumeBulma({ cssFramework }) {
               <hr className='has-background-white-ter mb-3 mt-3' style={{ height: '0.5px' }} />
               <div className="container">
                 <div className="column is-full">
-                  <p className='has-text-grey-lighter has-text-weight-bold has-text-centered m-3' style={{ fontSize: '10px' }}>
+                  <p className='has-text-grey-lighter has-text-weight-bold has-text-centered m-3' style={{ fontSize: '12px' }}>
                     Copyright © {new Date().getFullYear()} Fathiraz. <br />
                     Made with 🩵 using React JS framework with Vite and {cssFramework.charAt(0).toUpperCase() + cssFramework.slice(1)} CSS framework
                   </p>

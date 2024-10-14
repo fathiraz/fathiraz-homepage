@@ -19,7 +19,7 @@ function ResumeTailwind({ cssFramework }) {
       <div className="container mx-auto mt-5 mb-5 max-w-[1300px] ">
         <div className="flex justify-center">
           <div className="w-full md:w-10/12 lg:w-8/12">
-            <div className="terminal-window bg-neutral-900 rounded-lg p-5 text-base-content font-mono shadow-lg text-xs mx-2 sm:mx-0">
+            <div className="terminal-window bg-neutral-900 rounded-lg p-5 text-base-content font-mono shadow-lg text-sm mx-2 sm:mx-0">
             <div className="terminal-header flex justify-between m-1">
               <div className="terminal-buttons flex space-x-2">
                 <span className="bg-error rounded-full w-3 h-3"></span>
@@ -50,7 +50,7 @@ function ResumeTailwind({ cssFramework }) {
     <div className="container mx-auto mt-5 mb-5 max-w-[1300px]">
       <div className="flex justify-center">
         <div className="w-full md:w-10/12 lg:w-8/12">
-          <div className="terminal-window bg-neutral-900 rounded-lg p-5 text-base-content font-mono shadow-lg text-xs mx-2 sm:mx-0">
+          <div className="terminal-window bg-neutral-900 rounded-lg p-5 text-base-content font-mono shadow-lg text-sm mx-2 sm:mx-0">
             <div className="terminal-header flex justify-between m-1">
               <div className="terminal-buttons flex space-x-2">
                 <span className="bg-error rounded-full w-3 h-3"></span>
@@ -131,13 +131,13 @@ function ResumeTailwind({ cssFramework }) {
                 <div className="grid grid-cols-1 gap-2">
                   {resumeData.educations.map((education, index) => (
                     <div key={index} className="p-4 border border-neutral-content rounded text-neutral-content bg-gray-950 mt-1 mb-1">
-                      <p className="text-info font-bold mb-2" style={{ fontSize: '13px' }}>{education.university}</p>
-                      <p className="text-warning font-bold mb-1 text-xs">{education.location}</p>
-                      <p className="font-bold mb-1 text-xs">{education.degree} in <span className="text-success">{education.major}</span></p>
-                      <p className="text-neutral-content mb-1 text-xs">
+                      <p className="text-info font-bold mb-2" style={{ fontSize: '15px' }}>{education.university}</p>
+                      <p className="text-warning font-bold mb-1 text-sm">{education.location}</p>
+                      <p className="font-bold mb-1 text-sm">{education.degree} in <span className="text-success">{education.major}</span></p>
+                      <p className="text-neutral-content mb-1 text-sm">
                         <span className="text-red-500">{education.start}</span> - <span className="text-red-500">{education.end}</span>
                       </p>
-                      <p className="text-neutral-content italic mb-1 text-xs">{education.grade}</p>
+                      <p className="text-neutral-content italic mb-1 text-sm">{education.grade}</p>
                     </div>
                   ))}
                 </div>
@@ -153,18 +153,23 @@ function ResumeTailwind({ cssFramework }) {
                 <div className="grid grid-cols-1 gap-2">
                   {resumeData.experiences.map((experience, index) => (
                     <div key={index} className="p-4 border border-neutral-content rounded text-neutral-content bg-gray-950 mt-1 mb-1">
-                      <p className="text-success font-bold mb-2" style={{ fontSize: '13px' }}>
+                      <p className="text-success font-bold mb-2" style={{ fontSize: '15px' }}>
                         {experience.position} <span className="text-neutral-content">at</span> <span className="text-purple-400">{experience.company}</span>
                       </p>
-                      <p className="text-warning mb-1 italic text-xs">
+                      <p className="text-warning mb-1 italic text-sm">
                         {experience.start_date} - {experience.end_date} <span className="text-danger">({experience.duration})</span>
                       </p>
-                      <p className="text-neutral-content mb-1" style={{ fontSize: '11px' }}>{experience.summary}</p>
+                      <p className="text-neutral-content mb-1" style={{ fontSize: '13px' }}>{experience.summary}</p>
                       <ul className="pl-5 list-disc text-neutral-content mb-0">
                         {experience.workarounds.map((workaround, index) => (
-                          <li key={index} className="text-neutral-content mb-1" style={{ fontSize: '11px' }}>{workaround}</li>
+                          <li key={index} className="text-neutral-content mb-1" style={{ fontSize: '13px' }}>{workaround}</li>
                         ))}
                       </ul>
+                      <div className="mt-2">
+                        {experience.skills_used.map((skill, i) => (
+                          <span key={i} className="badge badge-xs badge-primary mr-2 mb-2 font-bold text-white p-2" style={{ fontSize: '11px' }}>{skill}</span>
+                        ))}
+                      </div>
                     </div>
                   ))}
                 </div>
