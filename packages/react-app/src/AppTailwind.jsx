@@ -1,4 +1,6 @@
-// this component renders the main application layout with a resume component
+// this component serves as a wrapper for the ResumeTailwind component, 
+// providing a dark background and centering the content both vertically and horizontally
+
 import PropTypes from 'prop-types';
 import ResumeTailwind from './ResumeTailwind';
 

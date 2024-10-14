@@ -1,5 +1,6 @@
-// this component renders the ResumeBulma component within a styled container, 
-// passing the cssFramework prop for styling purposes
+// this component serves as a wrapper for the ResumeBulma component, 
+// providing a dark background and centering the content both vertically and horizontally
+
 import PropTypes from 'prop-types';
 import ResumeBulma from './ResumeBulma';
 

@@ -4,7 +4,8 @@
     "css": [
       { "name": "bootstrap" },
       { "name": "bulma" },
-      { "name": "tailwind" }
+      { "name": "tailwind" },
+      { "name": "uikit" }
     ]
   }
 }

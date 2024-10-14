@@ -7,6 +7,7 @@ import { DataProvider } from './DataProvider';
 import AppBulma from './AppBulma';
 import AppBootstrap from './AppBootstrap';
 import AppTailwind from './AppTailwind';
+import AppUikit from './AppUikit';
 import 'animate.css';
 
 // Function to initialize the app
@@ -32,6 +33,9 @@ const initApp = async () => {
         case 'tailwind':
           await import('tailwindcss/tailwind.css');
           break;
+        case 'uikit':
+          await import('uikit/dist/css/uikit.min.css');
+          break;
         default:
           break;
       }
@@ -51,6 +55,7 @@ const initApp = async () => {
         {cssFramework === 'bulma' && <AppBulma cssFramework={cssFramework} />}
         {cssFramework === 'bootstrap' && <AppBootstrap cssFramework={cssFramework} />}
         {cssFramework === 'tailwind' && <AppTailwind cssFramework={cssFramework} />}
+        {cssFramework === 'uikit' && <AppUikit cssFramework={cssFramework} />}
       </DataProvider>
     </React.StrictMode>
   );
