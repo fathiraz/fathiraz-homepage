@@ -16,23 +16,23 @@ function ResumeUIkit({ cssFramework }) {
 
   if (loading) {
     return (
-      <div className="uk-container uk-container-small uk-margin-medium-top uk-margin-medium-bottom uk-animation-fade">
-        <div className="terminal-window uk-card uk-card-secondary uk-card-body uk-border-rounded" style={{ fontFamily: 'monospace', fontSize: '0.875rem', boxShadow: '0 4px 12px rgba(0, 0, 0, 0.3)' }}>
-          <div className="terminal-header uk-flex uk-flex-between uk-margin-small-bottom">
+      <div className="uk-container uk-container-small uk-margin-medium-top uk-margin-medium-bottom uk-animation-fade animate__animated animate__fadeIn" style={{ maxWidth: '1300px' }}>
+        <div className="uk-card uk-card-secondary uk-card-body uk-border-rounded" style={{ fontFamily: 'monospace', backgroundColor: '#212529', fontSize: '0.875rem', boxShadow: '0 4px 12px rgba(0, 0, 0, 0.3)' }}>
+          <div className="uk-flex uk-flex-between uk-margin-small-bottom">
             <div>
               <span className="uk-margin-small-right" style={{ width: '12px', height: '12px', backgroundColor: '#f0506e', borderRadius: '50%', display: 'inline-block' }}></span>
               <span className="uk-margin-small-right" style={{ width: '12px', height: '12px', backgroundColor: '#faa05a', borderRadius: '50%', display: 'inline-block' }}></span>
               <span style={{ width: '12px', height: '12px', backgroundColor: '#32d296', borderRadius: '50%', display: 'inline-block' }}></span>
             </div>
-            <div style={{ color: '#fff' }}>Resume Terminal</div>
+            <div style={{ color: '#fff', marginLeft: '10px' }}>Resume Terminal</div>
           </div>
-          <hr className="uk-divider-small" />
-          <div className="uk-placeholder uk-padding-small uk-margin-remove-bottom">
+          <hr style={{ border: '1px solid #333' }} />
+          <div className="uk-margin">
             {Array.from({ length: 10 }, (_, index) => (
-              <div key={index} className="uk-placeholder uk-padding-small uk-margin-small-bottom">
-                {Array.from({ length: 20 }, (_, index) => (
-                  <span key={index} className="uk-padding-small uk-margin-small-bottom">&nbsp;</span>
-                ))}
+              <div key={index} className="uk-grid-small uk-grid-match uk-margin-small uk-width-2xlarge@l uk-width-xlarge@m uk-width-large@s">
+                <div className="uk-width-1-1">
+                  <progress className="uk-progress" value="0" max="100"></progress>
+                </div>
               </div>
             ))}
           </div>
@@ -43,7 +43,7 @@ function ResumeUIkit({ cssFramework }) {
 
   return (
     <div className="uk-container uk-container-small uk-margin-medium-top uk-margin-medium-bottom">
-      <div className="uk-card uk-card-body uk-border-rounded" style={{ fontFamily: 'monospace', backgroundColor: '#212529', color: '', fontSize: '0.875rem', boxShadow: '0 4px 12px rgba(0, 0, 0, 0.3)' }}>
+      <div className="uk-card uk-card-body uk-border-rounded" style={{ fontFamily: 'monospace', backgroundColor: '#212529', fontSize: '0.875rem', boxShadow: '0 4px 12px rgba(0, 0, 0, 0.3)' }}>
         <div className="uk-flex uk-flex-between uk-margin-small-bottom">
           <div>
             <span className="uk-margin-small-right" style={{ width: '12px', height: '12px', backgroundColor: '#f0506e', borderRadius: '50%', display: 'inline-block' }}></span>
@@ -52,7 +52,7 @@ function ResumeUIkit({ cssFramework }) {
           </div>
           <div style={{ color: '#fff' }}>Resume Terminal</div>
         </div>
-        <hr className="uk-divider-small" />
+        <hr />
 
         {/* whoami section */}
         <div className="uk-margin">
@@ -72,7 +72,7 @@ function ResumeUIkit({ cssFramework }) {
         </div>
 
         {/* techstack section */}
-        <hr className="uk-divider-small" />
+        <hr style={{ border: '1px solid #333' }} />
         <div className="uk-margin">
           <p className="uk-text-muted uk-margin-small-bottom">
             <span className="uk-text-primary">user@portfolio:~$</span> techstack
@@ -90,7 +90,7 @@ function ResumeUIkit({ cssFramework }) {
         </div>
 
         {/* tools section */}
-        <hr className="uk-divider-small" />
+        <hr style={{ border: '1px solid #333' }} />
         <div className="uk-margin">
           <p className="uk-text-muted uk-margin-small-bottom">
             <span className="uk-text-primary">user@portfolio:~$</span> tools
@@ -108,7 +108,7 @@ function ResumeUIkit({ cssFramework }) {
         </div>
 
         {/* educations section */}
-        <hr className="uk-divider-small" />
+        <hr style={{ border: '1px solid #333' }} />
         <div className="uk-margin">
           <p className="uk-text-muted uk-margin-remove-bottom">
             <span className="uk-text-primary">user@portfolio:~$</span> edu
@@ -125,7 +125,7 @@ function ResumeUIkit({ cssFramework }) {
         </div>
 
         {/* experiences section */}
-        <hr className="uk-divider-small" />
+        <hr style={{ border: '1px solid #333' }} />
         <div className="uk-margin">
           <p className="uk-text-muted uk-margin-remove-bottom">
             <span className="uk-text-primary">user@portfolio:~$</span> exp
@@ -154,7 +154,7 @@ function ResumeUIkit({ cssFramework }) {
         </div>
 
         {/* languages section */}
-        <hr className="uk-divider-small" />
+        <hr style={{ border: '1px solid #333' }} />
         <div className="uk-margin">
           <p className="uk-text-muted uk-margin-small-bottom">
             <span className="uk-text-primary">user@portfolio:~$</span> lang
@@ -172,7 +172,7 @@ function ResumeUIkit({ cssFramework }) {
         </div>
 
         {/* footer */}
-        <hr className="uk-divider-small" />
+        <hr />
         <div className="uk-text-center uk-text-small" style={{ color: '#fff' }}>
           <p>
             Copyright © {new Date().getFullYear()} Fathiraz. <br />
