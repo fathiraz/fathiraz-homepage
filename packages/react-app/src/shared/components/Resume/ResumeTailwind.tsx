@@ -1,11 +1,11 @@
 import { useResumeData } from '../../../DataProvider';
-import { AppProps } from '../../props/Common';
+import { AppConfig } from '../../types/Common';
 import { Helper } from '../../utils/Helper';
 
 // this component displays the resume information in a terminal-like interface using the Tailwind CSS framework.
 // it allows users to view personal details, tech stack, tools, education, experiences, languages, 
 // and provides an option to change the CSS framework dynamically.
-function ResumeTailwind({ appProps }: { appProps: AppProps }) {
+function ResumeTailwind({ AppConfig }: { AppConfig: AppConfig }) {
   const { resumeData, configData, loading } = useResumeData();
 
   if (loading) {
@@ -192,7 +192,7 @@ function ResumeTailwind({ appProps }: { appProps: AppProps }) {
               <div className="flex flex-col">
                 <p className="text-neutral-content text-center font-bold mb-3" style={{ fontSize: '10px' }}>
                   Copyright © {new Date().getFullYear()} Fathiraz. <br />
-                  Made with 🩵 using React JS framework with Vite and {appProps.CssFramework.charAt(0).toUpperCase() + appProps.CssFramework.slice(1)} CSS framework
+                  Made with 🩵 using React JS framework with Vite and {AppConfig.CssFramework.charAt(0).toUpperCase() + AppConfig.CssFramework.slice(1)} CSS framework
                 </p>
               </div>
               {/* end of footer */}
@@ -213,7 +213,7 @@ function ResumeTailwind({ appProps }: { appProps: AppProps }) {
               style={{ fontSize: '0.6rem' }}
               onChange={(e) => Helper.handleFrameworkChange(e.target.value)}
               aria-label="CSS"
-              value={appProps.CssFramework}
+              value={AppConfig.CssFramework}
             >
               <option value="" disabled>
                 CSS Framework

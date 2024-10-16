@@ -38,13 +38,13 @@ export const Helper = {
     renderApp: (framework: string): JSX.Element | null => {
         switch (framework) {
             case 'bulma':
-                return <AppBulma appProps={{ CssFramework: framework }} />;
+                return <AppBulma AppConfig={{ CssFramework: framework }} />;
             case 'bootstrap':
-                return <AppBootstrap appProps={{ CssFramework: framework }} />;
+                return <AppBootstrap AppConfig={{ CssFramework: framework }} />;
             case 'tailwind':
-                return <AppTailwind appProps={{ CssFramework: framework }} />;
+                return <AppTailwind AppConfig={{ CssFramework: framework }} />;
             case 'uikit':
-                return <AppUikit appProps={{ CssFramework: framework }} />;
+                return <AppUikit AppConfig={{ CssFramework: framework }} />;
             default:
                 return null;
         }
@@ -54,13 +54,13 @@ export const Helper = {
     renderResume: (framework: string): JSX.Element | null => {
         switch (framework) {
             case 'bootstrap':
-                return <ResumeBootstrap appProps={{ CssFramework: framework }} />;
+                return <ResumeBootstrap AppConfig={{ CssFramework: framework }} />;
             case 'bulma':
-                return <ResumeBulma appProps={{ CssFramework: framework }} />;
+                return <ResumeBulma AppConfig={{ CssFramework: framework }} />;
             case 'tailwind':
-                return <ResumeTailwind appProps={{ CssFramework: framework }} />;
+                return <ResumeTailwind AppConfig={{ CssFramework: framework }} />;
             case 'uikit':
-                return <ResumeUikit appProps={{ CssFramework: framework }} />;
+                return <ResumeUikit AppConfig={{ CssFramework: framework }} />;
             default:
                 return null;
         }

@@ -1,11 +1,11 @@
 import { useResumeData } from '../../../DataProvider';
-import { AppProps } from '../../props/Common';
+import { AppConfig } from '../../types/Common';
 import { Helper } from '../../utils/Helper';
 
 // this component displays the resume information in a terminal-like interface using the UIkit CSS framework
 // allowing users to view personal details, tech stack, tools, education, experiences, languages, 
 // and provides an option to change the CSS framework dynamically
-function ResumeUIkit({ appProps }: { appProps: AppProps }) {
+function ResumeUIkit({ AppConfig }: { AppConfig: AppConfig }) {
   const { resumeData, configData, loading } = useResumeData();
 
   if (loading) {
@@ -170,7 +170,7 @@ function ResumeUIkit({ appProps }: { appProps: AppProps }) {
         <div className="uk-text-center uk-text-small" style={{ color: '#fff' }}>
           <p>
             Copyright © {new Date().getFullYear()} Fathiraz. <br />
-            Made with 🩵 using React JS framework with Vite and {appProps.CssFramework.charAt(0).toUpperCase() + appProps.CssFramework.slice(1)} CSS framework
+            Made with 🩵 using React JS framework with Vite and {AppConfig.CssFramework.charAt(0).toUpperCase() + AppConfig.CssFramework.slice(1)} CSS framework
           </p>
         </div>
       </div>
@@ -185,7 +185,7 @@ function ResumeUIkit({ appProps }: { appProps: AppProps }) {
             className="uk-select uk-form-small"
             onChange={(e) => Helper.handleFrameworkChange(e.target.value)}
             style={{ fontSize: '0.6rem' }}
-            value={appProps.CssFramework}
+            value={AppConfig.CssFramework}
           >
             <option value="" disabled>CSS Framework</option>
             {configData.frameworks.css.map((framework) => (

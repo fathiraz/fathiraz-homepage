@@ -1,11 +1,11 @@
 import { useResumeData } from '../../../DataProvider';
-import { AppProps } from '../../props/Common';
+import { AppConfig } from '../../types/Common';
 import { Helper } from '../../utils/Helper';
 
 // this component displays the resume information in a terminal-like interface with bootstrap css framework
 // allowing users to view personal details, tech stack, tools, education, experiences, languages, 
 // and provides an option to change the CSS framework dynamically
-function ResumeBootstrap({ appProps }: { appProps: AppProps }) {
+function ResumeBootstrap({ AppConfig }: { AppConfig: AppConfig }) {
   const { resumeData, configData, loading } = useResumeData();
 
   if (loading) {
@@ -211,7 +211,7 @@ function ResumeBootstrap({ appProps }: { appProps: AppProps }) {
                 <div className="col-12">
                   <p className='text-light text-center fw-bold mb-3' style={{ fontSize: '12px' }}>
                     Copyright © {new Date().getFullYear()} Fathiraz. <br />
-                    Made with 🩵 using React JS framework with Vite and {appProps.CssFramework.charAt(0).toUpperCase() + appProps.CssFramework.slice(1)} CSS framework
+                    Made with 🩵 using React JS framework with Vite and {AppConfig.CssFramework.charAt(0).toUpperCase() + AppConfig.CssFramework.slice(1)} CSS framework
                   </p>
                 </div>
               </div>
@@ -229,7 +229,7 @@ function ResumeBootstrap({ appProps }: { appProps: AppProps }) {
           </h6>
           <select className="form-select form-select-sm" onChange={(e) => Helper.handleFrameworkChange(e.target.value)} aria-label="CSS" style={{
             fontSize: '0.6rem',
-          }} value={appProps.CssFramework}>
+          }} value={AppConfig.CssFramework}>
             <option value="" disabled>
               CSS Framework
             </option>
