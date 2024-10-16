@@ -3,7 +3,6 @@
 // is still being fetched and ensures that data is only set if the component is still mounted.
 // this prevents potential memory leaks and state updates on unmounted components.
 
-import PropTypes from 'prop-types';
 import { createContext, useContext, useState, useEffect, useMemo } from 'react';
 import { fetchResumeData, fetchConfigData, ResumeDataApi, ConfigDataApi } from '../../../../shared/utils/Api';
 
@@ -77,10 +76,6 @@ export function DataProvider({ children }: { children: React.ReactNode }) {
     </DataContext.Provider>
   );
 }
-
-DataProvider.propTypes = {
-  children: PropTypes.node.isRequired,
-};
 
 // custom hook to use the resume data context
 export function useResumeData() {
