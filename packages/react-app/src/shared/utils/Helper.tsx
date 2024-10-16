@@ -1,13 +1,13 @@
 import queryString from 'query-string';
 
-import AppBulma from '../components/App/AppBulma';
-import AppBootstrap from '../components/App/AppBootstrap';
-import AppTailwind from '../components/App/AppTailwind';
-import AppUikit from '../components/App/AppUikit';
-import ResumeBootstrap from '../components/Resume/ResumeBootstrap';
-import ResumeBulma from '../components/Resume/ResumeBulma';
-import ResumeTailwind from '../components/Resume/ResumeTailwind';
-import ResumeUikit from '../components/Resume/ResumeUikit';
+import AppBulma from '../components/app/AppBulma';
+import AppBootstrap from '../components/app/AppBootstrap';
+import AppTailwind from '../components/app/AppTailwind';
+import AppUikit from '../components/app/AppUikit';
+import ResumeBootstrap from '../components/resume/ResumeBootstrap';
+import ResumeBulma from '../components/resume/ResumeBulma';
+import ResumeTailwind from '../components/resume/ResumeTailwind';
+import ResumeUikit from '../components/resume/ResumeUikit';
 
 // helper functions for CSS framework management
 export const Helper = {

@@ -182,12 +182,12 @@ function ResumeBootstrap({ AppConfig }: { AppConfig: AppConfig }) {
               {/* start of footer */}
               <hr className='text-light-emphasis mb-3 mt-3' />
               <div className="row">
-                <div className="col-12">
-                  <p className='text-light text-center fw-bold mb-3' style={{ fontSize: '12px' }}>
-                    Copyright © {new Date().getFullYear()} Fathiraz. <br />
-                    Made with 🩵 using React JS framework with Vite and {AppConfig.CssFramework.charAt(0).toUpperCase() + AppConfig.CssFramework.slice(1)} CSS framework
-                  </p>
-                </div>
+
+                {/* footer-bootstrap component */}
+                <footer-bootstrap
+                  cssFramework={AppConfig.CssFramework}
+                />
+
               </div>
               {/* end of footer */}
             </div>

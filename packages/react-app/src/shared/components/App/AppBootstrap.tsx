@@ -1,4 +1,4 @@
-import ResumeBootstrap from '../Resume/ResumeBootstrap';
+import ResumeBootstrap from '../resume/ResumeBootstrap';
 import { AppConfig } from '../../types/Common';
 
 // this component serves as a wrapper for the ResumeBootstrap component, 

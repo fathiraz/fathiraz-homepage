@@ -9,5 +9,8 @@ declare namespace JSX {
 
         // tools-bootstrap component
         'tools-bootstrap': any;
+
+        // footer-bootstrap component
+        'footer-bootstrap': any;
     }
 }

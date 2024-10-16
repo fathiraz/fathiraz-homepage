@@ -1,4 +1,4 @@
-import ResumeUikit from '../Resume/ResumeUikit';
+import ResumeUikit from '../resume/ResumeUikit';
 import { AppConfig } from '../../types/Common';
 
 // this component serves as a wrapper for the ResumeUikit component, 
