@@ -1,6 +1,7 @@
 import { useResumeData } from '../../utils/DataProvider';
 import { AppConfig } from '../../types/Common';
 import { Helper } from '../../utils/Helper';
+import { Education, Experience, Language } from '../../../../../shared/utils/Api';
 
 // this component displays the resume information in a terminal-like interface with bulma css framework
 // allowing users to view personal details, tech stack, tools, education, experiences, languages, 
@@ -84,7 +85,7 @@ function ResumeBulma({ AppConfig }: { AppConfig: AppConfig }) {
                 </div>
                 <div className="column is-full mt-0">
                   <div className="columns is-multiline is-mobile" style={{ margin: '-5px' }}>
-                    {resumeData.technology_stack.map((tech, index) => (
+                    {resumeData.technology_stack.map((tech: string, index: number) => (
                       <div key={index} className="column is-3-desktop is-4-tablet is-6-mobile" style={{ padding: '5px' }}>
                         <div className="is-flex is-align-items-center is-rounded has-background-black-bis has-text-grey-lighter p-1" style={{ border: '0.5px solid', borderColor: '#69748c', borderRadius: '5px', height: '100%' }}>
                           <i className={`devicon-${tech.toLowerCase().replace(/\s+/g, '')}-plain mr-2 is-size-7`}></i>
@@ -107,7 +108,7 @@ function ResumeBulma({ AppConfig }: { AppConfig: AppConfig }) {
                 </div>
                 <div className="column is-full">
                   <div className="columns is-multiline is-mobile" style={{ margin: '-5px' }}>
-                    {resumeData.tools.map((tool, index) => (
+                    {resumeData.tools.map((tool: string, index: number) => (
                       <div key={index} className="column is-3-desktop is-4-tablet is-6-mobile" style={{ padding: '5px' }}>
                         <div className="is-flex is-align-items-center is-rounded has-background-black-bis has-text-grey-lighter p-1" style={{ border: '0.5px solid', borderColor: '#69748c', borderRadius: '5px', height: '100%' }}>
                           <i className={`devicon-${tool.toLowerCase().replace(/\s+/g, '')}-plain mr-2 is-size-7`}></i>
@@ -128,7 +129,7 @@ function ResumeBulma({ AppConfig }: { AppConfig: AppConfig }) {
                 </div>
                 <div className="column is-full">
                   <div className="columns is-multiline">
-                    {resumeData.educations.map((education, index) => (
+                    {resumeData.educations.map((education: Education, index: number) => (
                       <div key={index} className="column p-3 is-full is-rounded has-background-black-bis has-text-grey-lighter mt-1 mb-1" style={{ border: '0.5px solid', borderColor: '#69748c', borderRadius: '5px' }}>
                         <p className='has-text-info has-text-weight-bold mb-2' style={{ fontSize: '15px' }}>{education.university}</p>
                         <p className='has-text-warning mb-1' style={{ fontSize: '14px' }}>{education.location}</p>
@@ -150,7 +151,7 @@ function ResumeBulma({ AppConfig }: { AppConfig: AppConfig }) {
                 </div>
                 <div className="column is-full">
                   <div className="columns is-multiline">
-                    {resumeData.experiences.map((experience, index) => (
+                    {resumeData.experiences.map((experience: Experience, index: number) => (
                       <div key={index} className="column p-3 is-full is-rounded has-background-black-bis has-text-grey-lighter mt-1 mb-1" style={{ border: '0.5px solid', borderColor: '#69748c', borderRadius: '5px' }}>
                         <p className='has-text-success has-text-weight-bold mb-2' style={{ fontSize: '15px' }}>
                           {experience.position} <span className='has-text-white-ter'>at </span> <span style={{ color: '#C678DD' }}>{experience.company}</span>
@@ -158,12 +159,12 @@ function ResumeBulma({ AppConfig }: { AppConfig: AppConfig }) {
                         <p className='has-text-warning is-italic mb-1' style={{ fontSize: '14px' }}>{experience.start_date} - {experience.end_date} <span className='has-text-danger'>({experience.duration})</span></p>
                         <p className='has-text-grey-lighter mb-1' style={{ fontSize: '13px' }}>{experience.summary}</p>
                         <ul className='has-text-grey-lighter pl-5 mb-0' style={{ listStyleType: 'circle' }}>
-                          {experience.workarounds.map((workaround, i) => (
+                          {experience.workarounds.map((workaround: string, i: number) => (
                             <li key={i} className='has-text-grey-lighter mb-1' style={{ fontSize: '13px' }}> {workaround}</li>
                           ))}
                         </ul>
                         <div className="buttons is-gap-1 mt-2">
-                          {experience.skills_used.map((skill, i) => (
+                          {experience.skills_used.map((skill: string, i: number) => (
                             <span key={i} className="button is-small is-rounded is-link m-0 p-1 has-text-weight-bold" style={{ fontSize: '10px' }}>{skill}</span>
                           ))}
                         </div>
@@ -182,7 +183,7 @@ function ResumeBulma({ AppConfig }: { AppConfig: AppConfig }) {
                 </div>
                 <div className="column is-full">
                   <div className="columns is-multiline">
-                    {resumeData.languages.map((language, index) => (
+                    {resumeData.languages.map((language: Language, index: number) => (
                       <div key={index} className="column is-full is-flex is-justify-content-space-between is-align-items-center is-rounded has-background-black-bis has-text-grey-lighter p-1 mt-1 mb-1" style={{ border: '0.5px solid', borderColor: '#69748c', borderRadius: '5px' }}>
                         <p className='has-text-info has-text-weight-bold m-0'>{language.language}</p>
                         <p className='has-text-warning has-text-weight-bold m-0'>{language.proficiency}</p>

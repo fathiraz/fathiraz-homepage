@@ -1,6 +1,7 @@
 import { useResumeData } from '../../utils/DataProvider';
 import { AppConfig } from '../../types/Common';
 import { Helper } from '../../utils/Helper';
+import { Education, Experience, Language } from '../../../../../shared/utils/Api';
 
 // this component displays the resume information in a terminal-like interface using the UIkit CSS framework
 // allowing users to view personal details, tech stack, tools, education, experiences, languages, 
@@ -72,7 +73,7 @@ function ResumeUIkit({ AppConfig }: { AppConfig: AppConfig }) {
             <span className="uk-text-primary">user@portfolio:~$</span> techstack
           </p>
           <div className="uk-grid uk-grid-small uk-grid-match uk-child-width-1-2 uk-child-width-1-4@m uk-text-small" style={{ backgroundColor: '#222', border: '1px solid #333', borderRadius: '5px', boxShadow: '0 2px 5px rgba(0, 0, 0, 0.3)' }}>
-            {resumeData.technology_stack.map((tech, index) => (
+            {resumeData.technology_stack.map((tech: string, index: number) => (
               <div key={index}>
                 <div className="uk-card uk-card-secondary uk-card-body uk-card-small uk-flex uk-flex-middle uk-height-1-1">
                   <i className={`devicon-${tech.toLowerCase().replace(/\s+/g, '')}-plain uk-margin-small-right`}></i>
@@ -90,7 +91,7 @@ function ResumeUIkit({ AppConfig }: { AppConfig: AppConfig }) {
             <span className="uk-text-primary">user@portfolio:~$</span> tools
           </p>
           <div className="uk-grid uk-grid-small uk-grid-match uk-child-width-1-2 uk-child-width-1-4@m uk-text-small" style={{ backgroundColor: '#222', border: '1px solid #333', borderRadius: '5px', boxShadow: '0 2px 5px rgba(0, 0, 0, 0.3)' }}>
-            {resumeData.tools.map((tool, index) => (
+            {resumeData.tools.map((tool: string, index: number) => (
               <div key={index}>
                 <div className="uk-card uk-card-secondary uk-card-body uk-card-small uk-flex uk-flex-middle uk-height-1-1">
                   <i className={`devicon-${tool.toLowerCase().replace(/\s+/g, '')}-plain uk-margin-small-right`}></i>
@@ -107,7 +108,7 @@ function ResumeUIkit({ AppConfig }: { AppConfig: AppConfig }) {
           <p className="uk-text-muted uk-margin-remove-bottom">
             <span className="uk-text-primary">user@portfolio:~$</span> edu
           </p>
-          {resumeData.educations.map((education, index) => (
+          {resumeData.educations.map((education: Education, index: number) => (
             <div key={index} className="uk-card uk-card-secondary uk-card-body uk-card-small uk-margin-small-top" style={{ backgroundColor: '#222', border: '1px solid #333', borderRadius: '5px', boxShadow: '0 2px 5px rgba(0, 0, 0, 0.3)' }}>
               <h4 className="uk-card-title uk-margin-remove-bottom uk-text-bold" style={{ color: '#17a2b8' }}>{education.university}</h4>
               <p className="uk-text-meta uk-margin-remove-top uk-text-bold uk-text-warning">{education.location}</p>
@@ -124,7 +125,7 @@ function ResumeUIkit({ AppConfig }: { AppConfig: AppConfig }) {
           <p className="uk-text-muted uk-margin-remove-bottom">
             <span className="uk-text-primary">user@portfolio:~$</span> exp
           </p>
-          {resumeData.experiences.map((experience, index) => (
+          {resumeData.experiences.map((experience: Experience, index: number) => (
             <div key={index} className="uk-card uk-card-body uk-card-small uk-margin-small-top uk-text-muted" style={{ backgroundColor: '#222', border: '1px solid #333', borderRadius: '5px', boxShadow: '0 2px 5px rgba(0, 0, 0, 0.3)' }}>
               <h4 className="uk-card-title uk-margin-remove-bottom uk-text-bold uk-text-success">
                 {experience.position} <span className="uk-text-default">at</span> <span style={{ color: '#C678DD' }}>{experience.company}</span>
@@ -134,12 +135,12 @@ function ResumeUIkit({ AppConfig }: { AppConfig: AppConfig }) {
               </p>
               <p>{experience.summary}</p>
               <ul className="uk-list uk-list-bullet">
-                {experience.workarounds.map((workaround, i) => (
+                {experience.workarounds.map((workaround: string, i: number) => (
                   <li key={i}>{workaround}</li>
                 ))}
               </ul>
               <div>
-                {experience.skills_used.map((skill, i) => (
+                {experience.skills_used.map((skill: string, i: number) => (
                   <span key={i} className="uk-label uk-background-primary uk-margin-small-right uk-margin-small-bottom uk-text-small">{skill}</span>
                 ))}
               </div>
@@ -154,7 +155,7 @@ function ResumeUIkit({ AppConfig }: { AppConfig: AppConfig }) {
             <span className="uk-text-primary">user@portfolio:~$</span> lang
           </p>
           <div>
-            {resumeData.languages.map((language, index) => (
+            {resumeData.languages.map((language: Language, index: number) => (
               <div key={index} className="uk-margin-small-bottom">
                 <div className="uk-card uk-card-secondary uk-card-body uk-card-small uk-flex uk-flex-between uk-flex-middle uk-text-small" style={{ backgroundColor: '#222', border: '1px solid #333', borderRadius: '5px', boxShadow: '0 2px 5px rgba(0, 0, 0, 0.3)' }}>
                   <span className="uk-text-bold" style={{ color: '#17a2b8' }}>{language.language}</span>

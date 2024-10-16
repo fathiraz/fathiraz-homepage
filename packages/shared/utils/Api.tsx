@@ -1,41 +1,49 @@
 import axios from 'axios';
 
 // define the structure of your resume data
+export interface Contact {
+  linkedin: string;
+  github: string;
+}
+
+export interface Language {
+  language: string;
+  proficiency: string;
+}
+
+export interface Education {
+  university: string;
+  location: string;
+  degree: string;
+  major: string;
+  start: string;
+  end: string;
+  grade: string;
+}
+
+export interface Experience {
+  company: string;
+  position: string;
+  location: string;
+  start_date: string;
+  end_date: string;
+  duration: string;
+  summary: string;
+  workarounds: string[];
+  skills_used: string[];
+}
+
 export interface ResumeDataApi {
   name: string;
   title: string;
   summary: string;
   work_preference: string;
-  contact: {
-    linkedin: string;
-    github: string;
-  };
-  languages: Array<{
-    language: string;
-    proficiency: string;
-  }>;
+  contact: Contact;
+  languages: Language[];
   tools: string[];
   technology_stack: string[];
-  educations: Array<{
-    university: string;
-    location: string;
-    degree: string;
-    major: string;
-    start: string;
-    end: string;
-    grade: string;
-  }>;
-  experiences: Array<{
-    company: string;
-    position: string;
-    location: string;
-    start_date: string;
-    end_date: string;
-    duration: string;
-    summary: string;
-    workarounds: string[];
-    skills_used: string[];
-  }>;
+  educations: Education[];
+  experiences: Experience[];
 }
 
 // define the structure of CSS frameworks

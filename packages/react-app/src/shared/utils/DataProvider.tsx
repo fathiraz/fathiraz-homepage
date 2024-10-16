@@ -5,7 +5,7 @@
 
 import PropTypes from 'prop-types';
 import { createContext, useContext, useState, useEffect, useMemo } from 'react';
-import { fetchResumeData, fetchConfigData, ResumeDataApi, ConfigDataApi } from '@shared/utils/Api';
+import { fetchResumeData, fetchConfigData, ResumeDataApi, ConfigDataApi } from '../../../../shared/utils/Api';
 
 // create a context for resume data
 const DataContext = createContext<{

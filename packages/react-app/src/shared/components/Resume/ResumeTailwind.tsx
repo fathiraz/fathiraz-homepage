@@ -1,6 +1,7 @@
 import { useResumeData } from '../../utils/DataProvider';
 import { AppConfig } from '../../types/Common';
 import { Helper } from '../../utils/Helper';
+import { Education, Experience, Language } from '../../../../../shared/utils/Api';
 
 // this component displays the resume information in a terminal-like interface using the Tailwind CSS framework.
 // it allows users to view personal details, tech stack, tools, education, experiences, languages, 
@@ -89,7 +90,7 @@ function ResumeTailwind({ AppConfig }: { AppConfig: AppConfig }) {
                   <span className="text-primary">user@portfolio:~$</span> <span>techstack</span>
                 </p>
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
-                  {resumeData.technology_stack.map((tech, index) => (
+                  {resumeData.technology_stack.map((tech: string, index: number) => (
                     <div key={index} className="flex items-center p-1 border border-neutral-content rounded text-neutral-content bg-gray-950">
                       <i className={`devicon-${tech.toLowerCase().replace(/\s+/g, '')}-plain text-xs mr-2`}></i>
                       <span className="font-mono text-xs sm:text-sm">{tech}</span>
@@ -106,7 +107,7 @@ function ResumeTailwind({ AppConfig }: { AppConfig: AppConfig }) {
                   <span className="text-primary">user@portfolio:~$</span> <span>tools</span>
                 </p>
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
-                  {resumeData.tools.map((tool, index) => (
+                  {resumeData.tools.map((tool: string, index: number) => (
                     <div key={index} className="flex items-center p-1 border border-neutral-content rounded text-neutral-content bg-gray-950">
                       <i className={`devicon-${tool.toLowerCase().replace(/\s+/g, '')}-plain text-xs mr-2`}></i>
                       <span className="font-mono text-xs sm:text-sm">{tool}</span>
@@ -123,7 +124,7 @@ function ResumeTailwind({ AppConfig }: { AppConfig: AppConfig }) {
                   <span className="text-primary">user@portfolio:~$</span> <span>edu</span>
                 </p>
                 <div className="grid grid-cols-1 gap-2">
-                  {resumeData.educations.map((education, index) => (
+                  {resumeData.educations.map((education: Education, index: number) => (
                     <div key={index} className="p-4 border border-neutral-content rounded text-neutral-content bg-gray-950 mt-1 mb-1">
                       <p className="text-info font-bold mb-2" style={{ fontSize: '15px' }}>{education.university}</p>
                       <p className="text-warning font-bold mb-1 text-sm">{education.location}</p>
@@ -145,7 +146,7 @@ function ResumeTailwind({ AppConfig }: { AppConfig: AppConfig }) {
                   <span className="text-primary">user@portfolio:~$</span> <span>exp</span>
                 </p>
                 <div className="grid grid-cols-1 gap-2">
-                  {resumeData.experiences.map((experience, index) => (
+                  {resumeData.experiences.map((experience: Experience, index: number) => (
                     <div key={index} className="p-4 border border-neutral-content rounded text-neutral-content bg-gray-950 mt-1 mb-1">
                       <p className="text-success font-bold mb-2" style={{ fontSize: '15px' }}>
                         {experience.position} <span className="text-neutral-content">at</span> <span className="text-purple-400">{experience.company}</span>
@@ -155,12 +156,12 @@ function ResumeTailwind({ AppConfig }: { AppConfig: AppConfig }) {
                       </p>
                       <p className="text-neutral-content mb-1" style={{ fontSize: '13px' }}>{experience.summary}</p>
                       <ul className="pl-5 list-disc text-neutral-content mb-0">
-                        {experience.workarounds.map((workaround, index) => (
+                        {experience.workarounds.map((workaround: string, index: number) => (
                           <li key={index} className="text-neutral-content mb-1" style={{ fontSize: '13px' }}>{workaround}</li>
                         ))}
                       </ul>
                       <div className="mt-2">
-                        {experience.skills_used.map((skill, i) => (
+                        {experience.skills_used.map((skill: string, i: number) => (
                           <span key={i} className="badge badge-xs badge-primary mr-2 mb-2 font-bold text-white p-2" style={{ fontSize: '11px' }}>{skill}</span>
                         ))}
                       </div>
@@ -177,7 +178,7 @@ function ResumeTailwind({ AppConfig }: { AppConfig: AppConfig }) {
                   <span className="text-primary">user@portfolio:~$</span> <span>lang</span>
                 </p>
                 <div className="grid grid-cols-1 gap-2">
-                  {resumeData.languages.map((language, index) => (
+                  {resumeData.languages.map((language: Language, index: number) => (
                     <div key={index} className="flex border border-neutral-content justify-between p-1 mt-1 mb-1 rounded text-neutral-content bg-gray-950">
                       <p className="text-info font-bold">{language.language}</p>
                       <p className="text-warning font-bold">{language.proficiency}</p>

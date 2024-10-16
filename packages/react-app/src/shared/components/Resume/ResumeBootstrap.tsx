@@ -1,6 +1,7 @@
 import { useResumeData } from '../../utils/DataProvider';
 import { AppConfig } from '../../types/Common';
 import { Helper } from '../../utils/Helper';
+import { Education, Experience, Language } from '../../../../../shared/utils/Api';
 
 // this component displays the resume information in a terminal-like interface with bootstrap css framework
 // allowing users to view personal details, tech stack, tools, education, experiences, languages, 
@@ -90,7 +91,7 @@ function ResumeBootstrap({ AppConfig }: { AppConfig: AppConfig }) {
                 </div>
                 <div className="col-12">
                   <div className="row g-2">
-                    {resumeData.technology_stack.map((tech, index) => (
+                    {resumeData.technology_stack.map((tech: string, index: number) => (
                       <div key={index} className="col-6 col-md-4 col-lg-3">
                         <div className="d-flex align-items-center rounded border border-secondary bg-black bg-opacity-25 text-light text-opacity-75 p-1 h-100">
                           <i className={`devicon-${tech.toLowerCase().replace(/\s+/g, '')}-plain me-2 fs-6`}></i>
@@ -113,7 +114,7 @@ function ResumeBootstrap({ AppConfig }: { AppConfig: AppConfig }) {
                 </div>
                 <div className="col-12">
                   <div className="row g-2">
-                    {resumeData.tools.map((tool, index) => (
+                    {resumeData.tools.map((tool: string, index: number) => (
                       <div key={index} className="col-6 col-md-4 col-lg-3">
                         <div className="d-flex align-items-center rounded border border-secondary bg-black bg-opacity-25 text-light text-opacity-75 p-1 h-100">
                           <i className={`devicon-${tool.toLowerCase().replace(/\s+/g, '')}-plain me-2 fs-6`}></i>
@@ -136,7 +137,7 @@ function ResumeBootstrap({ AppConfig }: { AppConfig: AppConfig }) {
                 </div>
                 <div className="col-12">
                   <div className="row">
-                    {resumeData.educations.map((education, index) => (
+                    {resumeData.educations.map((education: Education, index: number) => (
                       <div key={index} className="col-12 p-3 w-100 border border-secondary rounded mt-1 mb-1 bg-black bg-opacity-25">
                         <p className='text-info fw-bold mb-2' style={{ fontSize: '15px' }}>{education.university}</p>
                         <p className='text-warning fw-bold mb-1' style={{ fontSize: '14px' }}>{education.location}</p>
@@ -160,7 +161,7 @@ function ResumeBootstrap({ AppConfig }: { AppConfig: AppConfig }) {
                 </div>
                 <div className="col-12">
                   <div className="row">
-                    {resumeData.experiences.map((experience, index) => (
+                    {resumeData.experiences.map((experience: Experience, index: number) => (
                       <div key={index} className="col-12 p-3 w-100 border border-secondary rounded mt-1 mb-1 bg-black bg-opacity-25">
                         <p className='text-success fw-bold mb-2' style={{ fontSize: '15px' }}>
                           {experience.position} <span className='text-light'>at </span> <span style={{ color: '#C678DD' }}>{experience.company}</span>
@@ -168,12 +169,12 @@ function ResumeBootstrap({ AppConfig }: { AppConfig: AppConfig }) {
                         <p className='text-warning fst-italic mb-1' style={{ fontSize: '14px' }}>{experience.start_date} - {experience.end_date} <span className='text-danger'>({experience.duration})</span></p>
                         <p className='text-light text-opacity-75 mb-1' style={{ fontSize: '13px' }}>{experience.summary}</p>
                         <ul className='text-light text-opacity-75 pe-1 mb-0' style={{ listStyleType: 'circle' }}>
-                          {experience.workarounds.map((workaround, i) => (
+                          {experience.workarounds.map((workaround: string, i: number) => (
                             <li className='text-light text-opacity-75 mb-1' key={i} style={{ fontSize: '13px' }}> {workaround}</li>
                           ))}
                         </ul>
                         <div className="mt-2">
-                          {experience.skills_used.map((skill, i) => (
+                          {experience.skills_used.map((skill: string, i: number) => (
                             <span key={i} className="badge text-bg-primary rounded-pill text-wrap bg-primary me-2 mb-2">{skill}</span>
                           ))}
                         </div>
@@ -194,7 +195,7 @@ function ResumeBootstrap({ AppConfig }: { AppConfig: AppConfig }) {
                 </div>
                 <div className="col-12">
                   <div className="row">
-                    {resumeData.languages.map((language, index) => (
+                    {resumeData.languages.map((language: Language, index: number) => (
                       <div key={index} className="col-12 d-flex justify-content-between mt-1 mb-1 p-1 bg-black bg-opacity-25 rounded border border-secondary">
                         <p className='text-info fw-bold m-0'>{language.language}</p>
                         <p className='text-warning fw-bold m-0'>{language.proficiency}</p>
