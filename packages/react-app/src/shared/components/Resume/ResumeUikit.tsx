@@ -1,18 +1,12 @@
+import { useResumeData } from '../../../DataProvider';
+import { AppProps } from '../../props/Common';
+import { Helper } from '../../utils/Helper';
+
 // this component displays the resume information in a terminal-like interface using the UIkit CSS framework
 // allowing users to view personal details, tech stack, tools, education, experiences, languages, 
 // and provides an option to change the CSS framework dynamically
-
-import PropTypes from 'prop-types';
-import { useResumeData } from './DataProvider';
-
-function ResumeUIkit({ cssFramework }) {
+function ResumeUIkit({ appProps }: { appProps: AppProps }) {
   const { resumeData, configData, loading } = useResumeData();
-
-  const handleFrameworkChange = (framework) => {
-    const url = new URL(window.location);
-    url.searchParams.set('css', framework.name);
-    window.location.href = url.toString();
-  };
 
   if (loading) {
     return (
@@ -77,7 +71,7 @@ function ResumeUIkit({ cssFramework }) {
           <p className="uk-text-muted uk-margin-small-bottom">
             <span className="uk-text-primary">user@portfolio:~$</span> techstack
           </p>
-          <div className="uk-grid uk-grid-small uk-grid-match uk-child-width-1-2 uk-child-width-1-4@m uk-text-small"  style={{ backgroundColor: '#222', border: '1px solid #333', borderRadius: '5px', boxShadow: '0 2px 5px rgba(0, 0, 0, 0.3)' }}>
+          <div className="uk-grid uk-grid-small uk-grid-match uk-child-width-1-2 uk-child-width-1-4@m uk-text-small" style={{ backgroundColor: '#222', border: '1px solid #333', borderRadius: '5px', boxShadow: '0 2px 5px rgba(0, 0, 0, 0.3)' }}>
             {resumeData.technology_stack.map((tech, index) => (
               <div key={index}>
                 <div className="uk-card uk-card-secondary uk-card-body uk-card-small uk-flex uk-flex-middle uk-height-1-1">
@@ -95,7 +89,7 @@ function ResumeUIkit({ cssFramework }) {
           <p className="uk-text-muted uk-margin-small-bottom">
             <span className="uk-text-primary">user@portfolio:~$</span> tools
           </p>
-          <div className="uk-grid uk-grid-small uk-grid-match uk-child-width-1-2 uk-child-width-1-4@m uk-text-small"  style={{ backgroundColor: '#222', border: '1px solid #333', borderRadius: '5px', boxShadow: '0 2px 5px rgba(0, 0, 0, 0.3)' }}>
+          <div className="uk-grid uk-grid-small uk-grid-match uk-child-width-1-2 uk-child-width-1-4@m uk-text-small" style={{ backgroundColor: '#222', border: '1px solid #333', borderRadius: '5px', boxShadow: '0 2px 5px rgba(0, 0, 0, 0.3)' }}>
             {resumeData.tools.map((tool, index) => (
               <div key={index}>
                 <div className="uk-card uk-card-secondary uk-card-body uk-card-small uk-flex uk-flex-middle uk-height-1-1">
@@ -176,7 +170,7 @@ function ResumeUIkit({ cssFramework }) {
         <div className="uk-text-center uk-text-small" style={{ color: '#fff' }}>
           <p>
             Copyright © {new Date().getFullYear()} Fathiraz. <br />
-            Made with 🩵 using React JS framework with Vite and {cssFramework.charAt(0).toUpperCase() + cssFramework.slice(1)} CSS framework
+            Made with 🩵 using React JS framework with Vite and {appProps.CssFramework.charAt(0).toUpperCase() + appProps.CssFramework.slice(1)} CSS framework
           </p>
         </div>
       </div>
@@ -187,11 +181,11 @@ function ResumeUIkit({ cssFramework }) {
           <h6 className="uk-card-title uk-text-small" style={{ fontSize: '0.7rem' }}>
             <i className="devicon-css3-plain uk-margin-small-right"></i> CSS Framework
           </h6>
-          <select 
-            className="uk-select uk-form-small" 
-            onChange={(e) => handleFrameworkChange({ name: e.target.value })} 
+          <select
+            className="uk-select uk-form-small"
+            onChange={(e) => Helper.handleFrameworkChange(e.target.value)}
             style={{ fontSize: '0.6rem' }}
-            value={cssFramework}
+            value={appProps.CssFramework}
           >
             <option value="" disabled>CSS Framework</option>
             {configData.frameworks.css.map((framework) => (
@@ -205,9 +199,5 @@ function ResumeUIkit({ cssFramework }) {
     </div>
   );
 }
-
-ResumeUIkit.propTypes = {
-  cssFramework: PropTypes.string.isRequired,
-};
 
 export default ResumeUIkit;

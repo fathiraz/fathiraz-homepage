@@ -3,13 +3,14 @@
   "packageManager": "yarn@4.4.1",
   "private": true,
   "workspaces": [
-    "packages/*"
+    "packages/**/*"
   ],
   "dependencies": {
     "@popperjs/core": "^2.11.8",
     "bootstrap": "^5.3.3"
   },
   "scripts": {
-    "dev:react": "yarn workspace react-app dev"
+    "dev:react": "npm run dev --workspace=react-app",
+    "dev:api": "npm run start --workspace=api"
   }
 }

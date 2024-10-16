@@ -1,21 +1,18 @@
+import ResumeBootstrap from '../Resume/ResumeBootstrap';
+import { AppProps } from '../../props/Common';
+
 // this component serves as a wrapper for the ResumeBootstrap component, 
 // providing a dark background and centering the content both vertically and horizontally
+function AppBootstrap({ appProps }: { appProps: AppProps }) {
 
-import PropTypes from 'prop-types';
-import ResumeBootstrap from './ResumeBootstrap';
-
-function AppBootstrap({ cssFramework }) {
+  // container classes for centering content and setting background
   const containerClasses = "bg-dark-subtle text-light min-vh-100 d-flex justify-content-center align-items-center";
 
   return (
     <div className={containerClasses}>
-      <ResumeBootstrap cssFramework={cssFramework} />
+      <ResumeBootstrap appProps={appProps} />
     </div>
   );
 }
-
-AppBootstrap.propTypes = {
-  cssFramework: PropTypes.string.isRequired,
-};
 
 export default AppBootstrap;

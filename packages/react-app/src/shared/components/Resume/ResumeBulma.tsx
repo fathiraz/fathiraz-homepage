@@ -1,18 +1,12 @@
+import { useResumeData } from '../../../DataProvider';
+import { AppProps } from '../../props/Common';
+import { Helper } from '../../utils/Helper';
+
 // this component displays the resume information in a terminal-like interface with bulma css framework
 // allowing users to view personal details, tech stack, tools, education, experiences, languages, 
 // and provides an option to change the CSS framework dynamically
-
-import PropTypes from 'prop-types';
-import { useResumeData } from './DataProvider';
-
-function ResumeBulma({ cssFramework }) {
+function ResumeBulma({ appProps }: { appProps: AppProps }) {
   const { resumeData, configData, loading } = useResumeData();
-
-  const handleFrameworkChange = (framework) => {
-    const url = new URL(window.location);
-    url.searchParams.set('css', framework.name);
-    window.location.href = url.toString(); // Redirect to the new URL
-  };
 
   if (loading) {
     return (
@@ -33,7 +27,7 @@ function ResumeBulma({ cssFramework }) {
                 {Array.from({ length: 10 }, (_, index) => (
                   <div key={index} className="skeleton-lines">
                     <div className="is-small"></div>
-                    <div className="is-small"style={{ width: '75%' }}></div>
+                    <div className="is-small" style={{ width: '75%' }}></div>
                     <div className="is-small" style={{ width: '50%' }}></div>
                     <hr className='has-background-white-ter mb-3 mt-3' style={{ height: '0.5px' }} />
                   </div>
@@ -198,14 +192,14 @@ function ResumeBulma({ cssFramework }) {
                 </div>
               </div>
               {/* end of languages */}
-              
+
               {/* start of footer */}
               <hr className='has-background-white-ter mb-3 mt-3' style={{ height: '0.5px' }} />
               <div className="container">
                 <div className="column is-full">
                   <p className='has-text-grey-lighter has-text-weight-bold has-text-centered m-3' style={{ fontSize: '12px' }}>
                     Copyright © {new Date().getFullYear()} Fathiraz. <br />
-                    Made with 🩵 using React JS framework with Vite and {cssFramework.charAt(0).toUpperCase() + cssFramework.slice(1)} CSS framework
+                    Made with 🩵 using React JS framework with Vite and {appProps.CssFramework.charAt(0).toUpperCase() + appProps.CssFramework.slice(1)} CSS framework
                   </p>
                 </div>
               </div>
@@ -225,7 +219,7 @@ function ResumeBulma({ cssFramework }) {
           </div>
 
           <div className="content select is-small" style={{ fontSize: '0.7rem' }}>
-            <select onChange={(e) => handleFrameworkChange({ name: e.target.value })} aria-label="CSS" value={cssFramework}>
+            <select onChange={(e) => Helper.handleFrameworkChange(e.target.value)} aria-label="CSS" value={appProps.CssFramework}>
               <option value="" disabled>
                 CSS Framework
               </option>
@@ -238,13 +232,9 @@ function ResumeBulma({ cssFramework }) {
           </div>
         </div>
       </div>
-      
+
     </div>
   );
 }
-
-ResumeBulma.propTypes = {
-  cssFramework: PropTypes.string.isRequired,
-};
 
 export default ResumeBulma;

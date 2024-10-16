@@ -1,12 +1,22 @@
 {
   "name": "api",
-  "packageManager": "yarn@4.4.1",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.21.0"
   },
-  "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node --experimental-specifier-resolution=node dist/index.js",
+    "build": "tsc",
+    "dev": "ts-node-esm --experimental-specifier-resolution=node src/index.ts"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.7.5",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.6.3"
   }
 }

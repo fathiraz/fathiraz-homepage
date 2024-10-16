@@ -1,18 +1,12 @@
+import { useResumeData } from '../../../DataProvider';
+import { AppProps } from '../../props/Common';
+import { Helper } from '../../utils/Helper';
+
 // this component displays the resume information in a terminal-like interface using the Tailwind CSS framework.
 // it allows users to view personal details, tech stack, tools, education, experiences, languages, 
 // and provides an option to change the CSS framework dynamically.
-
-import PropTypes from 'prop-types';
-import { useResumeData } from './DataProvider';
-
-function ResumeTailwind({ cssFramework }) {
+function ResumeTailwind({ appProps }: { appProps: AppProps }) {
   const { resumeData, configData, loading } = useResumeData();
-
-  const handleFrameworkChange = (framework) => {
-    const url = new URL(window.location);
-    url.searchParams.set('css', framework.name);
-    window.location.href = url.toString(); // Redirect to the new URL
-  };
 
   if (loading) {
     return (
@@ -20,29 +14,29 @@ function ResumeTailwind({ cssFramework }) {
         <div className="flex justify-center">
           <div className="w-full md:w-10/12 lg:w-8/12">
             <div className="terminal-window bg-neutral-900 rounded-lg p-5 text-base-content font-mono shadow-lg text-sm mx-2 sm:mx-0">
-            <div className="terminal-header flex justify-between m-1">
-              <div className="terminal-buttons flex space-x-2">
-                <span className="bg-error rounded-full w-3 h-3"></span>
-                <span className="bg-warning rounded-full w-3 h-3"></span>
-                <span className="bg-success rounded-full w-3 h-3"></span>
-              </div>
-              <div className="terminal-tile text-white">Resume Terminal</div>
-            </div>
-            <hr className="border-white mb-3 mt-3 h-[0.5px]" />
-            <div className="terminal-body space-y-5">
-              {Array.from({ length: 10 }, (_, index) => (
-                <div key={index} className="space-y-3">
-                  <div className="skeleton h-3 w-full"></div>
-                  <div className="skeleton h-3 w-3/4"></div>
-                  <div className="skeleton h-3 w-1/2"></div>
-                  <hr className="border-white mb-3 mt-3 h-[0.5px]" />
+              <div className="terminal-header flex justify-between m-1">
+                <div className="terminal-buttons flex space-x-2">
+                  <span className="bg-error rounded-full w-3 h-3"></span>
+                  <span className="bg-warning rounded-full w-3 h-3"></span>
+                  <span className="bg-success rounded-full w-3 h-3"></span>
                 </div>
-              ))}
+                <div className="terminal-tile text-white">Resume Terminal</div>
+              </div>
+              <hr className="border-white mb-3 mt-3 h-[0.5px]" />
+              <div className="terminal-body space-y-5">
+                {Array.from({ length: 10 }, (_, index) => (
+                  <div key={index} className="space-y-3">
+                    <div className="skeleton h-3 w-full"></div>
+                    <div className="skeleton h-3 w-3/4"></div>
+                    <div className="skeleton h-3 w-1/2"></div>
+                    <hr className="border-white mb-3 mt-3 h-[0.5px]" />
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
     );
   }
 
@@ -192,13 +186,13 @@ function ResumeTailwind({ cssFramework }) {
                 </div>
               </div>
               {/* end of languages */}
-              
+
               {/* start of footer */}
               <hr className="border-white mb-3 mt-3 h-[0.5px]" />
               <div className="flex flex-col">
                 <p className="text-neutral-content text-center font-bold mb-3" style={{ fontSize: '10px' }}>
                   Copyright © {new Date().getFullYear()} Fathiraz. <br />
-                  Made with 🩵 using React JS framework with Vite and {cssFramework.charAt(0).toUpperCase() + cssFramework.slice(1)} CSS framework
+                  Made with 🩵 using React JS framework with Vite and {appProps.CssFramework.charAt(0).toUpperCase() + appProps.CssFramework.slice(1)} CSS framework
                 </p>
               </div>
               {/* end of footer */}
@@ -214,12 +208,12 @@ function ResumeTailwind({ cssFramework }) {
             <h6 className="card-title" style={{ fontSize: '0.7rem' }}>
               <i className="devicon-css3-plain mr-1"></i> CSS Framework
             </h6>
-            <select 
+            <select
               className="select select-bordered select-xs w-full max-w-xs text-black"
               style={{ fontSize: '0.6rem' }}
-              onChange={(e) => handleFrameworkChange({ name: e.target.value })}
+              onChange={(e) => Helper.handleFrameworkChange(e.target.value)}
               aria-label="CSS"
-              value={cssFramework}
+              value={appProps.CssFramework}
             >
               <option value="" disabled>
                 CSS Framework
@@ -234,13 +228,9 @@ function ResumeTailwind({ cssFramework }) {
         </div>
       </div>
       {/* end of floating button */}
-      
+
     </div>
   );
 }
-
-ResumeTailwind.propTypes = {
-  cssFramework: PropTypes.string.isRequired,
-};
 
 export default ResumeTailwind;

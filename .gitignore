@@ -13,3 +13,6 @@
 #!.yarn/cache
 .pnp.*
 .vercel
+
+# ignore env file
+packages/react-app/.env
