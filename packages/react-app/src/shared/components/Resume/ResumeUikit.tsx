@@ -1,4 +1,4 @@
-import { useResumeData } from '../../../DataProvider';
+import { useResumeData } from '../../utils/DataProvider';
 import { AppConfig } from '../../types/Common';
 import { Helper } from '../../utils/Helper';
 

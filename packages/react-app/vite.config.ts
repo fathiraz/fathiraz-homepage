@@ -8,5 +8,10 @@ export default defineConfig({
   },
   define: {
     'process.env': {}
+  },
+  resolve: {
+    alias: {
+      '@shared': '/src/shared'
+    }
   }
 })

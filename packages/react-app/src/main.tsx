@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { createRoot } from 'react-dom/client';
-import { DataProvider } from './DataProvider';
+import { DataProvider } from './shared/utils/DataProvider';
 import { Helper } from './shared/utils/Helper';
 import 'animate.css';
 
