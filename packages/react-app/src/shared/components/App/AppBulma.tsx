@@ -1,4 +1,4 @@
-import ResumeBulma from '../resume/ResumeBulma';
+import ResumeBulma from '../Resume/ResumeBulma';
 import { AppConfig } from '../../types/Common';
 
 // this component serves as a wrapper for the ResumeBulma component, 

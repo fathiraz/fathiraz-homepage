@@ -1,4 +1,4 @@
-import ResumeTailwind from '../resume/ResumeTailwind';
+import ResumeTailwind from '../Resume/ResumeTailwind';
 import { AppConfig } from '../../types/Common';
 
 // this component serves as a wrapper for the ResumeTailwind component, 
