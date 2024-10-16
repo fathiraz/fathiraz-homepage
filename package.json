@@ -7,7 +7,9 @@
   ],
   "dependencies": {
     "@popperjs/core": "^2.11.8",
-    "bootstrap": "^5.3.3"
+    "bootstrap": "^5.3.3",
+    "lit": "^3.2.1",
+    "react-app": "^0.0.0"
   },
   "scripts": {
     "dev:react": "npm run dev --workspace=react-app",

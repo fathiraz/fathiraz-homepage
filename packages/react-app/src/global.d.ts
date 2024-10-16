@@ -1,5 +1,13 @@
-declare module '*.css' {
-  const content: { [className: string]: string };
-  export default content;
-}
+declare namespace JSX {
+    interface IntrinsicElements {
 
+        // who-am-i-bootstrap component
+        'who-am-i-bootstrap': any;
+
+        // tech-stack-bootstrap component
+        'tech-stack-bootstrap': any;
+
+        // tools-bootstrap component
+        'tools-bootstrap': any;
+    }
+}

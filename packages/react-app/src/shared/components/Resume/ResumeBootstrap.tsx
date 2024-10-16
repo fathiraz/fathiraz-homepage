@@ -2,6 +2,7 @@ import { useResumeData } from '../../utils/DataProvider';
 import { AppConfig } from '../../types/Common';
 import { Helper } from '../../utils/Helper';
 import { Education, Experience, Language } from '../../../../../shared/utils/Api';
+import '../../../../../shared/components/bootstrap';
 
 // this component displays the resume information in a terminal-like interface with bootstrap css framework
 // allowing users to view personal details, tech stack, tools, education, experiences, languages, 
@@ -61,69 +62,41 @@ function ResumeBootstrap({ AppConfig }: { AppConfig: AppConfig }) {
 
               {/* start of whoami */}
               <div className="row">
-                <div className="col-12">
-                  <div className='m-9 d-flex flex-column gap-1'>
-                    <p className='text-light text-opacity-75 mb-1 m-0'>
-                      <span className='text-primary'>user@portfolio:~$</span> <span>whoami</span>
-                    </p>
-                    <p className='text-light text-opacity-75 m-0'>👋🏻 Hello, I&apos;m <span className='text-success'>{resumeData.name}</span></p>
-                    <p className='text-light text-opacity-75 m-0'>📕 <span className='text-warning'>{resumeData.title}</span></p>
-                    <p className='text-light text-opacity-75 m-0'>📖 <span>{resumeData.summary}</span></p>
-                    <p className='text-light text-opacity-75 m-0'>🌏 <span>{resumeData.work_preference}</span></p>
-                    <p className='text-light text-opacity-75 m-0'>
-                      🔗 <a className='text-info text-decoration-none' href={`https://${resumeData.contact.linkedin}`} target="_blank" rel="noopener noreferrer">{resumeData.contact.linkedin}</a>
-                    </p>
-                    <p className='text-light text-opacity-75 m-0'>
-                      🐙 <a className='text-info text-decoration-none' href={`https://${resumeData.contact.github}`} target="_blank" rel="noopener noreferrer">{resumeData.contact.github}</a>
-                    </p>
-                  </div>
-                </div>
+
+                {/* who-am-i-bootstrap component */}
+                <who-am-i-bootstrap
+                  name={resumeData.name}
+                  title={resumeData.title}
+                  summary={resumeData.summary}
+                  work_preference={resumeData.work_preference}
+                  linkedin={resumeData.contact.linkedin}
+                  github={resumeData.contact.github}
+                />
+
               </div>
               {/* end of whoami */}
 
               {/* start of techstack */}
               <hr className='text-danger mb-3 mt-3' />
               <div className="row">
-                <div className="col-12">
-                  <p className='text-light text-opacity-75 mb-1 m-0'>
-                    <span className='text-primary'>user@portfolio:~$</span> <span>techstack</span>
-                  </p>
-                </div>
-                <div className="col-12">
-                  <div className="row g-2">
-                    {resumeData.technology_stack.map((tech: string, index: number) => (
-                      <div key={index} className="col-6 col-md-4 col-lg-3">
-                        <div className="d-flex align-items-center rounded border border-secondary bg-black bg-opacity-25 text-light text-opacity-75 p-1 h-100">
-                          <i className={`devicon-${tech.toLowerCase().replace(/\s+/g, '')}-plain me-2 fs-6`}></i>
-                          <span style={{ fontFamily: 'monospace' }}>{tech}</span>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
+
+                {/* tech-stack-bootstrap component */}
+                <tech-stack-bootstrap
+                  technologies={resumeData.technology_stack}
+                />
+
               </div>
               {/* end of techstack */}
 
               {/* start of tools */}
               <hr className='text-danger mb-3 mt-3' />
               <div className="row">
-                <div className="col-12">
-                  <p className='text-light text-opacity-75 mb-1 m-0'>
-                    <span className='text-primary'>user@portfolio:~$</span> <span>tools</span>
-                  </p>
-                </div>
-                <div className="col-12">
-                  <div className="row g-2">
-                    {resumeData.tools.map((tool: string, index: number) => (
-                      <div key={index} className="col-6 col-md-4 col-lg-3">
-                        <div className="d-flex align-items-center rounded border border-secondary bg-black bg-opacity-25 text-light text-opacity-75 p-1 h-100">
-                          <i className={`devicon-${tool.toLowerCase().replace(/\s+/g, '')}-plain me-2 fs-6`}></i>
-                          <span style={{ fontFamily: 'monospace' }}>{tool}</span>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
+
+                {/* tools-bootstrap component */}
+                <tools-bootstrap
+                  tools={resumeData.tools}
+                />
+
               </div>
               {/* end of tools */}
 

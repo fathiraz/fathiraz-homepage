@@ -16,3 +16,6 @@
 
 # ignore env file
 packages/react-app/.env
+
+# ignore dist folder
+packages/*/dist

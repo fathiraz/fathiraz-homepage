@@ -14,6 +14,8 @@
     "postinstall": "npm run build"
   },
   "devDependencies": {
+    "@lit-labs/gen-manifest": "^0.3.4",
+    "@lit-labs/gen-wrapper-react": "^0.3.3",
     "@types/cors": "^2.8.17",
     "@types/express": "^5.0.0",
     "@types/node": "^22.7.5",
