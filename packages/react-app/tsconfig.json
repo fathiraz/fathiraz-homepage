@@ -27,7 +27,9 @@
     "types": [
       "vite/client",
       "node"
-    ]
+    ],
+    "experimentalDecorators": true,
+    "useDefineForClassFields": false
   },
   "include": [
     "src",

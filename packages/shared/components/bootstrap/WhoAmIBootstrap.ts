@@ -7,12 +7,12 @@ export class WhoAmIBootstrap extends LitElement {
         return this;
     }
 
-    @property({ type: String }) name = '';
-    @property({ type: String }) title = '';
-    @property({ type: String }) summary = '';
-    @property({ type: String }) work_preference = '';
-    @property({ type: String }) linkedin = '';
-    @property({ type: String }) github = '';
+    @property() name = '';
+    @property() title = '';
+    @property() summary = '';
+    @property() work_preference = '';
+    @property() linkedin = '';
+    @property() github = '';
 
     render() {
         return html`

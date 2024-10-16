@@ -7,7 +7,7 @@ export class ToolsBootstrap extends LitElement {
         return this;
     }
 
-    @property({ type: String }) tools = '';
+    @property() tools = '';
 
     render() {
 

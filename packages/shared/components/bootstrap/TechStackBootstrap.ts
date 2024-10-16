@@ -8,7 +8,7 @@ export class TechStackBootstrap extends LitElement {
         return this;
     }
 
-    @property({ type: String }) technologies = '';
+    @property() technologies = '';
 
     render() {
 
