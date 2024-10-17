@@ -17,7 +17,7 @@
 		<em>Built with the tools and technologies:</em>
 </p>
 <p align="center">
-	<img src="https://img.shields.io/badge/JavaScript-F7DF1E.svg?style=for-the-badge&logo=JavaScript&logoColor=black" alt="JavaScript">
+	<img src="https://img.shields.io/badge/TypeScript-3178C6.svg?style=for-the-badge&logo=TypeScript&logoColor=white" alt="TypeScript">
 	<img src="https://img.shields.io/badge/HTML5-E34F26.svg?style=for-the-badge&logo=HTML5&logoColor=white" alt="HTML5">
 	<img src="https://img.shields.io/badge/Bootstrap-7952B3.svg?style=for-the-badge&logo=Bootstrap&logoColor=white" alt="Bootstrap">
   <img src="https://img.shields.io/badge/Tailwind_CSS-a5f3fc?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind">
@@ -30,6 +30,7 @@
   <img src="https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white" alt="Nodejs">
 	<img src="https://img.shields.io/badge/Express-000000.svg?style=for-the-badge&logo=Express&logoColor=white" alt="Express">
 	<img src="https://img.shields.io/badge/json-5E5C5C?style=for-the-badge&logo=json&logoColor=white" alt="JSON">
+  <img src="https://img.shields.io/badge/Lit-324FFF.svg?style=for-the-badge&logo=Lit&logoColor=white" alt="Lit">
 </p>
 
 <br>
@@ -77,35 +78,44 @@ This project is a dynamic portfolio homepage that showcases multiple JavaScript 
 ```sh
 └── fathiraz-homepage/
 ├── README.md
-├── package-lock.json
 ├── package.json
+├── .yarnrc.yml
 ├── packages
 │ ├── api
-│ │ ├── .gitignore
-│ │ ├── README.md
-│ │ ├── index.js
+│ │ ├── src
+│ │ │ └── index.ts
+│ │ ├── tsconfig.json
 │ │ ├── package.json
 │ │ └── vercel.json
-│ └── react-app
-│ ├── .gitignore
-│ ├── README.md
-│ ├── eslint.config.js
-│ ├── index.html
-│ ├── package.json
-│ ├── postcss.config.js
-│ ├── public
-│ ├── src
-│ ├── tailwind.config.js
-│ └── vite.config.js
+│ ├── react-app
+│ │ ├── src
+│ │ │ ├── shared
+│ │ │ │ ├── components
+│ │ │ │ │ ├── App
+│ │ │ │ │ │ ├── index.ts
+│ │ │ │ │ │ └── AppBootstrap.tsx
+│ │ │ │ │ └── Resume
+│ │ │ │ │   ├── index.ts
+│ │ │ │ │   └── ResumeBootstrap.tsx
+│ │ │ │ └── utils
+│ │ │ │   └── Helper.tsx
+│ │ │ ├── App.tsx
+│ │ │ └── main.tsx
+│ │ ├── index.html
+│ │ ├── tsconfig.json
+│ │ ├── tsconfig.node.json
+│ │ ├── package.json
+│ │ ├── postcss.config.js
+│ │ ├── tailwind.config.ts
+│ │ └── vite.config.ts
+│ └── shared
+│   └── components
+│     └── bootstrap
+│       └── index.ts
 ├── public
 │ ├── config.json
 │ ├── images
-│ │ ├── react-bootstrap.png
-│ │ ├── react-bulma.png
-│ │ └── react-tailwind.png
 │ └── resume.json
-└── utils
-└── api.jsx
 ```
 
 ## 🧩 Modules
@@ -114,8 +124,8 @@ This project is a dynamic portfolio homepage that showcases multiple JavaScript 
 
 | File | Summary |
 | --- | --- |
-| [package-lock.json](https://github.com/fathiraz/fathiraz-homepage/blob/main/package-lock.json) | Automatically generated file for any operations where npm modifies either the node_modules tree or package.json. |
 | [package.json](https://github.com/fathiraz/fathiraz-homepage/blob/main/package.json) | Defines the project dependencies and scripts for the root of the monorepo. |
+| [.yarnrc.yml](https://github.com/fathiraz/fathiraz-homepage/blob/main/.yarnrc.yml) | Yarn configuration file specifying the node-modules linker. |
 
 </details>
 
@@ -123,12 +133,27 @@ This project is a dynamic portfolio homepage that showcases multiple JavaScript 
 
 | File | Summary |
 | --- | --- |
-| [postcss.config.js](https://github.com/fathiraz/fathiraz-homepage/blob/main/packages/react-app/postcss.config.js) | Configuration file for PostCSS, a tool for transforming CSS with JavaScript. |
-| [tailwind.config.js](https://github.com/fathiraz/fathiraz-homepage/blob/main/packages/react-app/tailwind.config.js) | Configuration file for Tailwind CSS, a utility-first CSS framework. |
-| [vite.config.js](https://github.com/fathiraz/fathiraz-homepage/blob/main/packages/react-app/vite.config.js) | Configuration file for Vite, a build tool that aims to provide a faster and leaner development experience for modern web projects. |
+| [tsconfig.json](https://github.com/fathiraz/fathiraz-homepage/blob/main/packages/react-app/tsconfig.json) | TypeScript configuration for the React application. |
+| [tsconfig.node.json](https://github.com/fathiraz/fathiraz-homepage/blob/main/packages/react-app/tsconfig.node.json) | TypeScript configuration for Node.js environment in the React app. |
+| [vite.config.ts](https://github.com/fathiraz/fathiraz-homepage/blob/main/packages/react-app/vite.config.ts) | Vite configuration file for the React application. |
+| [tailwind.config.ts](https://github.com/fathiraz/fathiraz-homepage/blob/main/packages/react-app/tailwind.config.ts) | Tailwind CSS configuration file. |
+| [postcss.config.js](https://github.com/fathiraz/fathiraz-homepage/blob/main/packages/react-app/postcss.config.js) | PostCSS configuration file. |
 | [package.json](https://github.com/fathiraz/fathiraz-homepage/blob/main/packages/react-app/package.json) | Defines the dependencies and scripts for the React application. |
 | [index.html](https://github.com/fathiraz/fathiraz-homepage/blob/main/packages/react-app/index.html) | The main HTML file that serves as the entry point for the React application. |
-| [eslint.config.js](https://github.com/fathiraz/fathiraz-homepage/blob/main/packages/react-app/eslint.config.js) | Configuration file for ESLint, a tool for identifying and reporting on patterns in JavaScript. |
+| [src/App.tsx](https://github.com/fathiraz/fathiraz-homepage/blob/main/packages/react-app/src/App.tsx) | Main React component that renders the application. |
+| [src/main.tsx](https://github.com/fathiraz/fathiraz-homepage/blob/main/packages/react-app/src/main.tsx) | Entry point for the React application. |
+
+</details>
+
+<details closed><summary>packages/react-app/src/shared</summary>
+
+| File | Summary |
+| --- | --- |
+| [components/App/index.ts](https://github.com/fathiraz/fathiraz-homepage/blob/main/packages/react-app/src/shared/components/App/index.ts) | Exports App components. |
+| [components/App/AppBootstrap.tsx](https://github.com/fathiraz/fathiraz-homepage/blob/main/packages/react-app/src/shared/components/App/AppBootstrap.tsx) | Bootstrap-styled App component. |
+| [components/Resume/index.ts](https://github.com/fathiraz/fathiraz-homepage/blob/main/packages/react-app/src/shared/components/Resume/index.ts) | Exports Resume components. |
+| [components/Resume/ResumeBootstrap.tsx](https://github.com/fathiraz/fathiraz-homepage/blob/main/packages/react-app/src/shared/components/Resume/ResumeBootstrap.tsx) | Bootstrap-styled Resume component. |
+| [utils/Helper.tsx](https://github.com/fathiraz/fathiraz-homepage/blob/main/packages/react-app/src/shared/utils/Helper.tsx) | Helper utilities for the React application. |
 
 </details>
 
@@ -136,17 +161,18 @@ This project is a dynamic portfolio homepage that showcases multiple JavaScript 
 
 | File | Summary |
 | --- | --- |
+| [src/index.ts](https://github.com/fathiraz/fathiraz-homepage/blob/main/packages/api/src/index.ts) | Main entry point for the Express.js API application. |
+| [tsconfig.json](https://github.com/fathiraz/fathiraz-homepage/blob/main/packages/api/tsconfig.json) | TypeScript configuration for the API application. |
 | [vercel.json](https://github.com/fathiraz/fathiraz-homepage/blob/main/packages/api/vercel.json) | Configuration file for deploying the API on Vercel. |
-| [index.js](https://github.com/fathiraz/fathiraz-homepage/blob/main/packages/api/index.js) | Main entry point for the Express.js API application. |
 | [package.json](https://github.com/fathiraz/fathiraz-homepage/blob/main/packages/api/package.json) | Defines the dependencies and scripts for the API application. |
 
 </details>
 
-<details closed><summary>utils</summary>
+<details closed><summary>packages/shared</summary>
 
 | File | Summary |
 | --- | --- |
-| [api.jsx](https://github.com/fathiraz/fathiraz-homepage/blob/main/utils/api.jsx) | Utility functions for making API calls from the React application. |
+| [components/bootstrap/index.ts](https://github.com/fathiraz/fathiraz-homepage/blob/main/packages/shared/components/bootstrap/index.ts) | Exports shared Bootstrap components. |
 
 </details>
 
@@ -157,7 +183,7 @@ This project is a dynamic portfolio homepage that showcases multiple JavaScript 
 ### 🔖 Prerequisites
 
 Before you begin, ensure you have the following installed:
-- Node.js (version 14 or higher)
+- Node.js (version 18 or higher)
 - npm (usually comes with Node.js)
 
 ### 📦 Installation
@@ -184,7 +210,7 @@ Execute the test suite using the following command:
 
 1. Start the API server:
 ```sh
-❯ npm run start --workspace api
+❯ npm run dev --workspace api
 ```
 
 2. In a new terminal, start the React application:
@@ -206,7 +232,7 @@ Framework Options
   - [x] **`Bootstrap`**: <strike>Bootstrap CSS framework</strike>
   - [x] **`Bulma`**: <strike>Bulma CSS framework</strike>
   - [x] **`Tailwind`**: <strike>Tailwind CSS framework</strike>
-  - [ ] **`Uikit`**: Uikit CSS framework
+  - [x] **`Uikit`**: Uikit CSS framework
   - [ ] **`Foundation`**: Foundation CSS framework
 
 ---
