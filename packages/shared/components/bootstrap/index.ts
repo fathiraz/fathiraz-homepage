@@ -1,5 +1,11 @@
 export * from './WhoAmIBootstrap';
 export * from './TechStackBootstrap';
 export * from './ToolsBootstrap';
+export * from './EducationsBootstrap';
+export * from './ExperiencesBootstrap';
+export * from './LanguagesBootstrap';
+export * from './FloatingButtonBootstrap';
 export * from './FooterBootstrap';
-
+export * from './TerminalHeaderBootstrap';
+export * from './PlaceholderBootstrap';
+export * from './DividerBootstrap';

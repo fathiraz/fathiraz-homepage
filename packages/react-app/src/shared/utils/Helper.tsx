@@ -1,17 +1,17 @@
 import queryString from 'query-string';
 
 import {
-  AppBulma,
-  AppBootstrap,
-  AppTailwind,
-  AppUikit
+    AppBulma,
+    AppBootstrap,
+    AppTailwind,
+    AppUikit
 } from '../components/App';
 
 import {
-  ResumeBootstrap,
-  ResumeBulma,
-  ResumeTailwind,
-  ResumeUikit
+    ResumeBootstrap,
+    ResumeBulma,
+    ResumeTailwind,
+    ResumeUikit
 } from '../components/Resume';
 
 // helper functions for CSS framework management
