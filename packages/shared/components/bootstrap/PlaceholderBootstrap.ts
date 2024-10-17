@@ -11,7 +11,7 @@ export class PlaceholderBootstrap extends LitElement {
 
     render() {
         return html`
-            ${Array.from({ length: this.length }, (_, index) => html`
+            ${Array.from({ length: this.length }, () => html`
                 <div class="placeholder-glow">
                     <span class="placeholder col-7"></span>
                     <span class="placeholder col-4"></span>
