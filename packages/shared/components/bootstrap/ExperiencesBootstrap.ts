@@ -45,3 +45,9 @@ export class ExperiencesBootstrap extends LitElement {
         `;
     }
 }
+
+declare global {
+    interface HTMLElementTagNameMap {
+        'experiences-bootstrap': ExperiencesBootstrap;
+    }
+}

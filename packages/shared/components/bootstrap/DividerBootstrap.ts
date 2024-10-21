@@ -13,3 +13,9 @@ export class DividerBootstrap extends LitElement {
         return html`<hr class='${this.color} mb-3 mt-3' />`;
     }
 }
+
+declare global {
+    interface HTMLElementTagNameMap {
+        'divider-bootstrap': DividerBootstrap;
+    }
+}

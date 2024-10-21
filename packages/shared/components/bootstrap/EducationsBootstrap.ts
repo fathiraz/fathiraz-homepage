@@ -35,3 +35,9 @@ export class EducationsBootstrap extends LitElement {
         `;
     }
 }
+
+declare global {
+    interface HTMLElementTagNameMap {
+        'educations-bootstrap': EducationsBootstrap;
+    }
+}

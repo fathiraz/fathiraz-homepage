@@ -22,3 +22,9 @@ export class FooterBootstrap extends LitElement {
     `;
     }
 }
+
+declare global {
+    interface HTMLElementTagNameMap {
+        'footer-bootstrap': FooterBootstrap;
+    }
+}

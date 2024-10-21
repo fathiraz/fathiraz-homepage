@@ -33,3 +33,9 @@ export class ToolsBootstrap extends LitElement {
         `;
     }
 }
+
+declare global {
+    interface HTMLElementTagNameMap {
+        'tools-bootstrap': ToolsBootstrap;
+    }
+}

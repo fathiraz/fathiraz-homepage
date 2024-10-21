@@ -34,3 +34,9 @@ export class TechStackBootstrap extends LitElement {
         `;
     }
 }
+
+declare global {
+    interface HTMLElementTagNameMap {
+        'tech-stack-bootstrap': TechStackBootstrap;
+    }
+}

@@ -35,3 +35,9 @@ export class FloatingButtonBootstrap extends LitElement {
         handleFrameworkChange(select.value);
     }
 }
+
+declare global {
+    interface HTMLElementTagNameMap {
+        'floating-button-bootstrap': FloatingButtonBootstrap;
+    }
+}

@@ -32,3 +32,9 @@ export class LanguagesBootstrap extends LitElement {
         `;
     }
 }
+
+declare global {
+    interface HTMLElementTagNameMap {
+        'languages-bootstrap': LanguagesBootstrap;
+    }
+}

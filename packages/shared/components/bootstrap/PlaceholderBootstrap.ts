@@ -24,3 +24,9 @@ export class PlaceholderBootstrap extends LitElement {
         `;
     }
 }
+
+declare global {
+    interface HTMLElementTagNameMap {
+        'placeholder-bootstrap': PlaceholderBootstrap;
+    }
+}

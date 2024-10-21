@@ -4,20 +4,21 @@ import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { DataProvider } from './shared/utils/DataProvider';
 import { Helper } from './shared/utils/Helper';
+import { getCssFramework, importCssFramework } from '../../shared/utils/Helper';
 import 'animate.css';
 
 // Function to initialize the app
 const initApp = async () => {
 
   // default to bootstrap if no framework is specified
-  let cssFramework = Helper.getCssFramework();
+  let cssFramework = getCssFramework();
 
   // check if a CSS framework is specified in the query parameters
   if (cssFramework && typeof cssFramework === 'string') {
     cssFramework = cssFramework.toLowerCase();
 
     // import the selected CSS framework
-    await Helper.importCssFramework(cssFramework);
+    await importCssFramework(cssFramework);
   }
 
   // create the root container for the app

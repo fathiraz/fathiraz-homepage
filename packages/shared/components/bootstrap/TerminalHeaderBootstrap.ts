@@ -20,3 +20,9 @@ export class TerminalHeaderBootstrap extends LitElement {
         `;
     }
 }
+
+declare global {
+    interface HTMLElementTagNameMap {
+        'terminal-header-bootstrap': TerminalHeaderBootstrap;
+    }
+}
