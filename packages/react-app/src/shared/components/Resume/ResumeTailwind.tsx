@@ -7,7 +7,7 @@ import NavTailwind from '../Navigation/NavTailwind';
 
 function ResumeTailwind({ AppConfig }: { AppConfig: AppConfig }) {
     const { resumeData, configData, loading } = useResumeData();
-    const { theme, toggleTheme } = useTheme();
+    const { theme } = useTheme();
     const terminalRef = useRef<HTMLDivElement>(null);
 
     if (loading) {
@@ -39,7 +39,7 @@ function ResumeTailwind({ AppConfig }: { AppConfig: AppConfig }) {
                             <div className="command-line terminal-title text-gray-400 font-mono">portfolio.sh</div>
                             <div className="w-[52px]"></div>
                         </div>
-                        <div className="terminal-body">
+                        <div className="terminal-body" ref={terminalRef}>
                             <div className="command-output">
 
                                 {/* start of whoami */}

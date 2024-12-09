@@ -7,7 +7,7 @@ import NavBootstrap from '../Navigation/NavBootstrap';
 
 function ResumeBootstrap({AppConfig}: { AppConfig: AppConfig }) {
     const {resumeData, configData, loading} = useResumeData();
-    const {theme, toggleTheme} = useTheme();
+    const {theme} = useTheme();
     const terminalRef = useRef<HTMLDivElement>(null);
 
     if (loading) {
