@@ -21,7 +21,7 @@ function ResumeTailwind({ AppConfig }: { AppConfig: AppConfig }) {
     }
 
     return (
-        <div className="container mx-auto px-4 my-24">
+        <div className="container mx-auto px-4 my-24 animate__animated animate__fadeIn">
             <NavTailwind AppConfig={AppConfig} configData={configData} />
             <div className="flex justify-center">
                 <div className="w-full lg:w-3/4">

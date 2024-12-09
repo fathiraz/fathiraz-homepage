@@ -14,14 +14,14 @@ function ResumeBulma({ AppConfig }: { AppConfig: AppConfig }) {
     return (
       <div className="container mt-4 mb-4 animate__animated animate__fadeIn">
         <div className="is-flex is-justify-content-center">
-          <div className="button is-loading is-primary">Loading</div>
+          <div className="button is-loading is-dark is-large is-responsive">Loading</div>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="container is-fluid py-5 animate__animated animate__fadeIn">
+    <div className="container is-fluid py-5 mt-6 animate__animated animate__fadeIn">
       <NavBulma AppConfig={AppConfig} configData={configData} />
       <div className="columns is-centered">
         <div className="column is-12 is-10-tablet is-8-desktop">
