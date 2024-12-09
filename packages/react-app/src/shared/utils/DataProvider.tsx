@@ -44,7 +44,7 @@ export function DataProvider({ children }: { children: React.ReactNode }) {
           setData({ resumeData: resume, configData: config });
           setTimeout(() => {
             setLoading(false); // set loading to false after data is fetched
-          }, 250);
+          }, 1000);
         }
       } catch (error) {
         console.error('Error fetching data:', error);
