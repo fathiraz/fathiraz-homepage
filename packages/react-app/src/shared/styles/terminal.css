@@ -86,7 +86,7 @@
 
 /* Terminal Header */
 .terminal-header {
-  background: var(--terminal-header);
+  {{/* background: var(--terminal-header); */}}
   padding: 0.625rem 1rem;
   border-bottom: 1px solid var(--terminal-border);
   display: flex;

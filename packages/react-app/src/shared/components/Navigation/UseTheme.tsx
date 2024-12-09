@@ -27,6 +27,9 @@ export const ThemeProvider = ({children}: { children: React.ReactNode }) => {
             case 'tailwind':
                 document.documentElement.setAttribute('data-theme', theme);
                 break;
+            case 'bulma':
+                document.documentElement.setAttribute('data-theme', theme);
+                break;
         }
         // document.documentElement.setAttribute('data-theme', theme);
     }, [theme]);

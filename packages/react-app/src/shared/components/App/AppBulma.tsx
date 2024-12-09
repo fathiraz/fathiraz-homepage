@@ -10,7 +10,7 @@ function AppBulma({AppConfig}: { AppConfig: AppConfig }) {
     return (
         <ThemeProvider>
             <div
-                className="has-background-grey-lighter has-text-lighter is-fullheight is-flex is-justify-content-center is-align-items-center">
+                className="is-fullheight is-flex is-justify-content-center is-align-items-center">
                 <ResumeBulma AppConfig={AppConfig}/>
             </div>
         </ThemeProvider>
